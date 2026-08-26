@@ -1,0 +1,387 @@
+<!-- Hero Section -->
+<header class="hero-section position-relative overflow-hidden" style="height: 100vh;">
+    <video autoplay muted loop playsinline class="position-absolute w-100 h-100 object-fit-cover"
+        style="top: 0; left: 0; z-index: 0;">
+        <source src="<?= BASE_URL ?>public/img/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay position-absolute w-100 h-100" style="background: rgba(0,0,0,0.7); z-index: 1;"></div>
+
+    <div class="container hero-content text-center position-relative h-100 d-flex flex-column justify-content-center align-items-center"
+        style="z-index: 2;">
+        <h1 class="display-1 fw-bold mb-4 text-white"
+            style="font-family: 'Rajdhani', sans-serif; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">SAKARYA OTO
+            ÇEKİCİ<br><span class="text-warning">7/24 YOL YARDIM</span></h1>
+        <p class="lead mb-5 text-white fs-3 d-none d-md-block">Sakarya, Kocaeli ve Düzce'de 7/24 Oto Çekici, Yol Yardım ve Oto Kurtarıcı Hizmeti</p>
+
+        <div class="d-flex flex-column flex-md-row gap-3 w-100 justify-content-center px-4">
+            <a href="https://wa.me/<?= isset($settings['whatsapp']) ? $settings['whatsapp'] : '905551234567' ?>"
+                class="btn btn-success btn-lg px-5 py-4 rounded-pill shadow-lg border-2 fw-bold fs-4">
+                <i class="fab fa-whatsapp me-2"></i> WHATSAPP KONUM AT
+            </a>
+            <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
+                class="btn btn-danger btn-lg px-5 py-4 rounded-pill animate-pulse shadow-lg border-2 fw-bold fs-4">
+                <i class="fas fa-phone-alt me-2 animate-shake"></i> HEMEN ARA
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Trust Badges Section -->
+<section class="py-4 bg-dark text-white border-bottom border-warning border-3">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <i class="fas fa-stopwatch fa-3x text-warning me-3"></i>
+                <div class="text-start">
+                    <h5 class="m-0 fw-bold">15 DAKİKADA VARIŞ</h5>
+                    <small class="text-muted">En Yakın Ekip Yönlendirilir</small>
+                </div>
+            </div>
+            <div
+                class="col-md-4 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+                <i class="fas fa-shield-alt fa-3x text-warning me-3"></i>
+                <div class="text-start">
+                    <h5 class="m-0 fw-bold">KASKOLU TAŞIMA</h5>
+                    <small class="text-muted">Aracınız Güvencemiz Altında</small>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <i class="fas fa-lira-sign fa-3x text-warning me-3"></i>
+                <div class="text-start">
+                    <h5 class="m-0 fw-bold">UYGUN FİYAT</h5>
+                    <small class="text-muted">Sürpriz Ekstra Ücret Yok</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="py-5 bg-white">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <?php
+                    $aboutImg = !empty($settings['about_image']) ? BASE_URL . 'public/img/' . htmlspecialchars($settings['about_image']) : 'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&q=80&w=800';
+                    ?>
+                    <img src="<?= $aboutImg ?>" class="img-fluid rounded-4 shadow-lg" alt="Hakkımızda">
+                    <div class="position-absolute bottom-0 start-0 bg-warning p-4 rounded-end-4 shadow"
+                        style="margin-bottom: -20px;">
+                        <span
+                            class="display-4 fw-bold text-dark d-block"><?= htmlspecialchars($settings['about_exp_years'] ?? '15') ?></span>
+                        <span class="h6 text-uppercase fw-bold text-dark m-0">Yıllık Tecrübe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h5 class="text-warning fw-bold text-uppercase mb-3 tracking-widest">Hakkımızda</h5>
+                <h2 class="display-5 fw-bold mb-4">
+                    <?= htmlspecialchars($settings['about_title'] ?? 'Güvenilir ve Hızlı Çekici Çözüm Ortağınız') ?>
+                </h2>
+                <div class="text-muted mb-4" style="white-space: pre-line; line-height: 1.8;">
+                    <?= $settings['about_desc'] ?? 'Yolda kaldığınızda endişelenmenize gerek yok. Uzman ekibimiz ve modern araç filomuzla 7/24 yanınızdayız.' ?>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <span class="fw-bold">7/24 Kesintisiz Hizmet</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <span class="fw-bold">Resmi Belgeli & Kaskolu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-dark rounded-pill px-5 py-3 fw-bold shadow hover-scale">
+                    <i class="fas fa-arrow-right me-2"></i> BİZE ULAŞIN
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section id="services" class="py-5" style="background: #f4f6f9;">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-dark">HİZMETLERİMİZ</h2>
+            <div class="width-50 height-4 bg-primary mx-auto mt-3 rounded"></div>
+        </div>
+
+        <div class="row g-4">
+            <?php
+            $services = [
+                ['icon' => 'truck-pickup', 'title' => 'Oto Çekici', 'desc' => 'Binek, ticari ve arazi araçlarınız için 7/24 profesyonel çekici hizmeti.'],
+                ['icon' => 'tools', 'title' => 'Yol Yardım', 'desc' => 'Lastik değişimi, yakıt ikmali ve basit arıza onarımları.'],
+                ['icon' => 'car-battery', 'title' => 'Akü Takviye', 'desc' => 'Aküsü biten aracınız için mobil akü takviye ve değişim hizmeti.'],
+                ['icon' => 'car', 'title' => 'Sıfır Araç Taşıma', 'desc' => 'Bayiden adrese veya şehirden şehire sigortalı sıfır araç nakliyesi.'],
+                ['icon' => 'motorcycle', 'title' => 'Motosiklet Taşıma', 'desc' => 'Motosikletleriniz için özel aparatlı güvenli transfer.'],
+                ['icon' => 'truck-moving', 'title' => 'Ağır Vasıta', 'desc' => 'Kamyon, tır ve iş makineleri için ağır tonajlı kurtarıcı.']
+            ];
+            foreach ($services as $svc):
+                ?>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm hover-up"
+                        style="border-radius: 15px; transition: 0.3s; background: white;">
+                        <div class="card-body p-4 text-center">
+                            <div class="d-inline-block p-3 rounded-circle bg-light mb-3 text-warning">
+                                <i class="fas fa-<?= $svc['icon'] ?> fa-2x"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3"><?= $svc['title'] ?></h4>
+                            <p class="text-muted"><?= $svc['desc'] ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- References Section (Marquee) -->
+<section class="py-5 bg-white border-bottom">
+    <div class="container overflow-hidden">
+        <h2 class="text-center mb-5 fw-bold text-dark">REFERANSLARIMIZ</h2>
+        <div class="marquee-wrapper" style="overflow: hidden; white-space: nowrap; position: relative;">
+            <div class="marquee-content d-inline-block" style="animation: scroll 20s linear infinite;">
+                <?php
+                // Logoları çek ve 3 kez tekrarla (Sonsuz döngü görüntüsü için)
+                $stmtRef = $pdo->query("SELECT image FROM `references` ORDER BY id DESC");
+                $refs = $stmtRef->fetchAll();
+                if (count($refs) > 0) {
+                    for ($i = 0; $i < 4; $i++) {
+                        foreach ($refs as $ref): ?>
+                            <div class="d-inline-block mx-4 align-middle">
+                                <img src="<?= BASE_URL ?>public/img/references/<?= htmlspecialchars($ref['image']) ?>"
+                                    style="height: 80px; width: auto; filter: grayscale(100%); opacity: 0.7; transition: 0.3s;"
+                                    class="ref-logo"
+                                    onmouseover="this.style.filter='none'; this.style.opacity='1'; this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.7'; this.style.transform='scale(1)'">
+                            </div>
+                        <?php endforeach;
+                    }
+                } else {
+                    echo '<div class="text-center text-muted">Henüz referans eklenmemiş.</div>';
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .ref-logo {
+        cursor: pointer;
+    }
+
+    .marquee-wrapper:hover .marquee-content {
+        animation-play-state: paused;
+    }
+</style>
+
+<!-- Locations Section (Modern) -->
+<section id="locations" class="py-5" style="background: linear-gradient(to bottom, #ffffff, #f8f9fa);">
+    <div class="container py-4">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill mb-3">7/24 AKTİF BÖLGELER</span>
+                <h2 class="fw-bold display-6 mb-3">HİZMET BÖLGELERİMİZ</h2>
+                <div class="width-50 height-4 bg-dark mx-auto rounded"></div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <?php
+            $stmt = $pdo->query("SELECT name, slug FROM locations WHERE is_active = 1 LIMIT 12");
+            while ($row = $stmt->fetch()):
+                ?>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="<?= BASE_URL . $row['slug'] ?>" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-up-lg text-center p-3"
+                            style="transition: all 0.3s ease; background: white; border-bottom: 3px solid transparent;">
+                            <div class="card-body p-2">
+                                <div class="mb-3 d-inline-block p-2 rounded-circle bg-light text-danger">
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                </div>
+                                <h5 class="card-title text-dark fw-bold m-0 fs-6"><?= htmlspecialchars($row['name']) ?></h5>
+                                <small class="text-muted text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">OTO
+                                    ÇEKİCİ</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="<?= BASE_URL ?>bolgeler"
+                class="btn btn-outline-dark rounded-pill px-5 py-3 fw-bold shadow-sm hover-scale">
+                <i class="fas fa-map-marked-alt me-2"></i> TÜM BÖLGELERİ GÖR
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hover-up-lg:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        border-bottom: 3px solid var(--bs-warning) !important;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<!-- FAQ Accordion (Modern) -->
+<section class="py-5" style="background-color: #f9f9f9;">
+    <div class="container py-4">
+        <h2 class="text-center mb-5 fw-bold display-6">SIKÇA SORULAN SORULAR</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <i class="fas fa-clock text-warning me-3"></i>Çekici bekleme süresi ne kadar?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted ps-5">
+                                Konumunuza bağlı olarak ortalama varış süremiz 15 ile 30 dakika arasındadır. Trafik
+                                durumuna göre operatörümüz size net süre verecektir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <i class="fas fa-shield-alt text-warning me-3"></i>Araçlarım sigortalı mı taşınıyor?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted ps-5">
+                                Evet, taşıdığımız tüm araçlar "Taşıyıcı Sorumluluk Sigortası" kapsamında tam güvence
+                                altındadır. Olası hasarlara karşı aracınız sigortalanır.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <i class="fas fa-lira-sign text-warning me-3"></i>Fiyatlarınız neye göre belirleniyor?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted ps-5">
+                                Fiyatlandırma; aracın türü, durumu (kazalı/arızalı), gideceği mesafe ve kullanılacak
+                                ekipmana göre değişiklik gösterir. Telefonda net fiyat alabilirsiniz.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .custom-accordion .accordion-button:not(.collapsed) {
+        background-color: var(--bs-warning);
+        color: black;
+        box-shadow: none;
+    }
+
+    .custom-accordion .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0, 0, 0, .125);
+    }
+
+    .custom-accordion .accordion-button::after {
+        filter: grayscale(100%);
+    }
+
+    .custom-accordion .accordion-button:not(.collapsed)::after {
+        filter: none;
+    }
+</style>
+
+<!-- Statistics Section -->
+<section class="py-5 bg-dark text-white border-bottom border-secondary">
+    <div class="container py-4">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                    <?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>+
+                </h2>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Mutlu Müşteri</p>
+            </div>
+            <div class="col-6 col-md-3 border-start border-secondary">
+                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                    <?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>+
+                </h2>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Çekilen Araç</p>
+            </div>
+            <div class="col-6 col-md-3 border-start border-secondary">
+                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                    <?= htmlspecialchars($settings['stat_years'] ?? '0') ?>
+                </h2>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Yıllık Tecrübe</p>
+            </div>
+            <div class="col-6 col-md-3 border-start border-secondary">
+                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                    <?= htmlspecialchars($settings['stat_team'] ?? '0') ?>
+                </h2>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Uzman Personel</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Urgent CTA Strip -->
+<section class="py-5 bg-warning border-top border-bottom border-dark border-3">
+    <div class="container text-center">
+        <h2 class="fw-bold display-5 mb-4 text-dark">YOLDA ZAMAN KAYBETMEYİN!</h2>
+        <p class="fs-4 mb-4 text-dark">Profesyonel ekibimiz 7/24 sizin için hazır bekliyor.</p>
+        <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
+            class="btn btn-dark btn-lg px-5 py-3 rounded-pill fs-3 animate-pulse">
+            <i class="fas fa-phone me-2 text-warning"></i> HEMEN ARA
+        </a>
+    </div>
+</section>
+
+<!-- Map Section -->
+<?php if (!empty($settings['google_maps'])): ?>
+    <section class="p-0 border-top border-dark">
+        <div class="ratio ratio-21x9" style="max-height: 450px;">
+            <?= $settings['google_maps'] ?>
+        </div>
+    </section>
+<?php endif; ?>
