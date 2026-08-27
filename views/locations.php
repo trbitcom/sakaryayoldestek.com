@@ -1,8 +1,8 @@
 <?php require_once 'header.php'; ?>
 
 <!-- Hero Section -->
-<header class="bg-dark text-white text-center py-5 d-flex align-items-center justify-content-center"
-    style="min-height: 40vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<?= BASE_URL ?>public/img/hero-bg.jpg') center/cover;">
+<header class="page-hero-bg text-white text-center py-5 d-flex align-items-center justify-content-center"
+    style="min-height: 40vh;">
     <div class="container">
         <h1 class="display-3 fw-bold mb-3 animate-shine text-uppercase">Hizmet Bölgelerimiz</h1>
         <p class="lead mb-4 opacity-75">Sakarya, Kocaeli ve Düzce'nin her noktasına 7/24 hizmet veriyoruz.</p>

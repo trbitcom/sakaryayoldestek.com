@@ -280,11 +280,20 @@ footer a:hover {
     color: var(--primary-color);
 }
 
+/* Page Hero Background (bölge sayfaları, /bolgeler, vb.) */
+.page-hero-bg {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(243, 156, 18, 0.25), transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(231, 76, 60, 0.2), transparent 45%),
+        linear-gradient(135deg, #1A1A1D, #2c2c31);
+}
+
 /* Login Page */
 .login-bg {
-    background: linear-gradient(rgba(26, 26, 29, 0.8), rgba(26, 26, 29, 0.8)), url('../img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(243, 156, 18, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(231, 76, 60, 0.15), transparent 40%),
+        linear-gradient(135deg, #1A1A1D, #26262b);
     min-height: 100vh;
     display: flex;
     align-items: center;

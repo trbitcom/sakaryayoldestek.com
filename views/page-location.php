@@ -3,9 +3,7 @@
 <!-- Location Hero -->
 <header class="position-relative overflow-hidden"
     style="height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
-    <div class="position-absolute w-100 h-100"
-        style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('<?= BASE_URL ?>public/img/hero-bg.jpg') center/cover; filter: blur(2px);">
-    </div>
+    <div class="position-absolute w-100 h-100 page-hero-bg"></div>
     <div class="container position-relative z-2">
         <span class="badge bg-warning text-dark fw-bold mb-3 px-3 py-2 animate-pulse"><i
                 class="fas fa-map-marker-alt me-2"></i>7/24 HİZMET</span>
