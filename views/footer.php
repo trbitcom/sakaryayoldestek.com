@@ -59,10 +59,10 @@
 
 <!-- Mobile Sticky Bar (Visible only on mobile) -->
 <div class="mobile-sticky-bar d-md-none">
-    <a href="https://wa.me/905551234567" class="sticky-btn sticky-whatsapp">
+    <a href="https://wa.me/<?= isset($settings['whatsapp']) ? $settings['whatsapp'] : '905551234567' ?>" class="sticky-btn sticky-whatsapp">
         <i class="fab fa-whatsapp me-2"></i> WHATSAPP
     </a>
-    <a href="tel:05551234567" class="sticky-btn sticky-call">
+    <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>" class="sticky-btn sticky-call">
         <i class="fas fa-phone-alt me-2 animate-shake"></i> HEMEN ARA
     </a>
 </div>
