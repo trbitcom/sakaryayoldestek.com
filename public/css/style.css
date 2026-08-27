@@ -363,6 +363,11 @@ footer a:hover {
     animation: shake 1s infinite linear;
 }
 
+/* Trust Badges ikon boyutu (masaüstü) */
+.trust-badge-icon {
+    font-size: 3em;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .display-3 {
@@ -379,5 +384,25 @@ footer a:hover {
         padding: 15px;
         border-radius: 0 0 15px 15px;
         margin-top: 10px;
+    }
+
+    /* Hero CTA butonları mobilde daha kompakt */
+    .hero-cta-btn {
+        padding: 0.65rem 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Güven rozetleri (15 Dakikada Varış vb.) mobilde yan yana, küçük ikon */
+    .trust-badge-icon {
+        font-size: 1.5rem;
+    }
+
+    .trust-badge-title {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .trust-badge-item {
+        padding: 0.5rem 0.25rem;
     }
 }

@@ -15,11 +15,11 @@
 
         <div class="d-flex flex-column flex-md-row gap-3 w-100 justify-content-center px-4">
             <a href="https://wa.me/<?= isset($settings['whatsapp']) ? $settings['whatsapp'] : '905551234567' ?>"
-                class="btn btn-success btn-lg px-5 py-4 rounded-pill shadow-lg border-2 fw-bold fs-4">
+                class="btn btn-success btn-lg hero-cta-btn px-5 py-4 rounded-pill shadow-lg border-2 fw-bold fs-4">
                 <i class="fab fa-whatsapp me-2"></i> WHATSAPP KONUM AT
             </a>
             <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
-                class="btn btn-danger btn-lg px-5 py-4 rounded-pill animate-pulse shadow-lg border-2 fw-bold fs-4">
+                class="btn btn-danger btn-lg hero-cta-btn px-5 py-4 rounded-pill animate-pulse shadow-lg border-2 fw-bold fs-4">
                 <i class="fas fa-phone-alt me-2 animate-shake"></i> HEMEN ARA
             </a>
         </div>
@@ -29,27 +29,27 @@
 <!-- Trust Badges Section -->
 <section class="py-4 bg-dark text-white border-bottom border-warning border-3">
     <div class="container">
-        <div class="row text-center g-4">
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <i class="fas fa-stopwatch fa-3x text-warning me-3"></i>
-                <div class="text-start">
-                    <h5 class="m-0 fw-bold">15 DAKİKADA VARIŞ</h5>
-                    <small class="text-muted">En Yakın Ekip Yönlendirilir</small>
+        <div class="row text-center g-2 g-md-4">
+            <div class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center">
+                <i class="fas fa-stopwatch trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
+                <div class="text-center text-md-start">
+                    <h5 class="m-0 fw-bold trust-badge-title">15 DAKİKADA VARIŞ</h5>
+                    <small class="text-muted d-none d-md-block">En Yakın Ekip Yönlendirilir</small>
                 </div>
             </div>
             <div
-                class="col-md-4 d-flex align-items-center justify-content-center border-start border-end border-secondary">
-                <i class="fas fa-shield-alt fa-3x text-warning me-3"></i>
-                <div class="text-start">
-                    <h5 class="m-0 fw-bold">KASKOLU TAŞIMA</h5>
-                    <small class="text-muted">Aracınız Güvencemiz Altında</small>
+                class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center border-start border-end border-secondary">
+                <i class="fas fa-shield-alt trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
+                <div class="text-center text-md-start">
+                    <h5 class="m-0 fw-bold trust-badge-title">KASKOLU TAŞIMA</h5>
+                    <small class="text-muted d-none d-md-block">Aracınız Güvencemiz Altında</small>
                 </div>
             </div>
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <i class="fas fa-lira-sign fa-3x text-warning me-3"></i>
-                <div class="text-start">
-                    <h5 class="m-0 fw-bold">UYGUN FİYAT</h5>
-                    <small class="text-muted">Sürpriz Ekstra Ücret Yok</small>
+            <div class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center">
+                <i class="fas fa-lira-sign trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
+                <div class="text-center text-md-start">
+                    <h5 class="m-0 fw-bold trust-badge-title">UYGUN FİYAT</h5>
+                    <small class="text-muted d-none d-md-block">Sürpriz Ekstra Ücret Yok</small>
                 </div>
             </div>
         </div>
