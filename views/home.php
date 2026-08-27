@@ -116,29 +116,24 @@
 
         <div class="row g-4">
             <?php
-            $services = [
-                ['icon' => 'truck-pickup', 'title' => 'Oto Çekici', 'desc' => 'Binek, ticari ve arazi araçlarınız için 7/24 profesyonel çekici hizmeti.'],
-                ['icon' => 'tools', 'title' => 'Yol Yardım', 'desc' => 'Lastik değişimi, yakıt ikmali ve basit arıza onarımları.'],
-                ['icon' => 'car-battery', 'title' => 'Akü Takviye', 'desc' => 'Aküsü biten aracınız için mobil akü takviye ve değişim hizmeti.'],
-                ['icon' => 'car', 'title' => 'Sıfır Araç Taşıma', 'desc' => 'Bayiden adrese veya şehirden şehire sigortalı sıfır araç nakliyesi.'],
-                ['icon' => 'motorcycle', 'title' => 'Motosiklet Taşıma', 'desc' => 'Motosikletleriniz için özel aparatlı güvenli transfer.'],
-                ['icon' => 'truck-moving', 'title' => 'Ağır Vasıta', 'desc' => 'Kamyon, tır ve iş makineleri için ağır tonajlı kurtarıcı.']
-            ];
-            foreach ($services as $svc):
+            $stmtSvc = $pdo->query("SELECT name, slug, icon, short_desc FROM services WHERE is_active = 1 ORDER BY sort_order ASC");
+            while ($svc = $stmtSvc->fetch()):
                 ?>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm hover-up"
-                        style="border-radius: 15px; transition: 0.3s; background: white;">
-                        <div class="card-body p-4 text-center">
-                            <div class="d-inline-block p-3 rounded-circle bg-light mb-3 text-warning">
-                                <i class="fas fa-<?= $svc['icon'] ?> fa-2x"></i>
+                    <a href="<?= BASE_URL . $svc['slug'] ?>" class="text-decoration-none">
+                        <div class="card h-100 border-0 shadow-sm hover-up"
+                            style="border-radius: 15px; transition: 0.3s; background: white;">
+                            <div class="card-body p-4 text-center">
+                                <div class="d-inline-block p-3 rounded-circle bg-light mb-3 text-warning">
+                                    <i class="fas <?= htmlspecialchars($svc['icon'] ?: 'fa-truck-pickup') ?> fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold mb-3 text-dark"><?= htmlspecialchars($svc['name']) ?></h4>
+                                <p class="text-muted"><?= htmlspecialchars($svc['short_desc']) ?></p>
                             </div>
-                            <h4 class="fw-bold mb-3"><?= $svc['title'] ?></h4>
-                            <p class="text-muted"><?= $svc['desc'] ?></p>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            <?php endforeach; ?>
+            <?php endwhile; ?>
         </div>
     </div>
 </section>

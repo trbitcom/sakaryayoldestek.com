@@ -19,10 +19,12 @@
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">Hizmetler</h6>
-                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Oto Çekici</a></p>
-                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Akü Takviye</a></p>
-                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Yol Yardım</a></p>
-                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Çoklu Taşıma</a></p>
+                <?php
+                $stmtFtrSvc = $pdo->query("SELECT name, slug FROM services WHERE is_active = 1 ORDER BY sort_order ASC");
+                while ($ftrSvc = $stmtFtrSvc->fetch()):
+                    ?>
+                    <p><a href="<?= BASE_URL . $ftrSvc['slug'] ?>" class="text-reset"><?= htmlspecialchars($ftrSvc['name']) ?></a></p>
+                <?php endwhile; ?>
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

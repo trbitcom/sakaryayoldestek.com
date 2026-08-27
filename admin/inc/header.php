@@ -16,6 +16,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
 $navItems = [
   ['href' => 'index.php', 'icon' => 'fa-chart-pie', 'label' => 'Anasayfa', 'match' => ['index.php']],
   ['href' => 'locations.php', 'icon' => 'fa-map-marker-alt', 'label' => 'Bölgeler', 'match' => ['locations.php', 'location-add.php']],
+  ['href' => 'services.php', 'icon' => 'fa-concierge-bell', 'label' => 'Hizmetler', 'match' => ['services.php', 'service-add.php']],
   ['href' => 'references.php', 'icon' => 'fa-handshake', 'label' => 'Referanslar', 'match' => ['references.php']],
   ['href' => 'pages.php', 'icon' => 'fa-file-alt', 'label' => 'Sayfalar', 'match' => ['pages.php', 'page_edit.php']],
   ['href' => 'settings.php', 'icon' => 'fa-cog', 'label' => 'Ayarlar', 'match' => ['settings.php']],

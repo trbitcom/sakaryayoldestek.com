@@ -55,6 +55,19 @@ if ($location) {
     exit;
 }
 
+// 2b. Durum: Hizmet Sayfaları (Services tablosuna bak)
+$stmtSvc = $pdo->prepare("SELECT * FROM services WHERE slug = :slug AND is_active = 1");
+$stmtSvc->execute(['slug' => $currentSlug]);
+$service = $stmtSvc->fetch();
+
+if ($service) {
+    $metaTitle = $service['meta_title'];
+    $metaDesc = $service['meta_desc'];
+
+    require_once 'views/service.php'; // header/footer'ı kendi içinde çağırır
+    exit;
+}
+
 // 3. Durum: Genel Sayfalar (Gizlilik, KVKK vb.)
 $stmtPage = $pdo->prepare("SELECT * FROM pages WHERE slug = :slug");
 $stmtPage->execute(['slug' => $currentSlug]);

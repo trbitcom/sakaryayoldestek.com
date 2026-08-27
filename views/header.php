@@ -205,13 +205,14 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Hizmetlerimiz</a>
             <ul class="dropdown-menu shadow border-0">
-              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-truck-pickup text-warning me-2"></i>Oto Çekici</a>
-              </li>
-              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-tools text-warning me-2"></i>Yol Yardım</a></li>
-              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-car-battery text-warning me-2"></i>Akü Takviye</a>
-              </li>
-              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-car text-warning me-2"></i>Sıfır Araç Taşıma</a>
-              </li>
+              <?php
+              $stmtHdrSvc = $pdo->query("SELECT name, slug, icon FROM services WHERE is_active = 1 ORDER BY sort_order ASC");
+              while ($hdrSvc = $stmtHdrSvc->fetch()):
+                ?>
+                <li><a class="dropdown-item" href="<?= BASE_URL . $hdrSvc['slug'] ?>"><i
+                      class="fas <?= htmlspecialchars($hdrSvc['icon'] ?: 'fa-truck-pickup') ?> text-warning me-2"></i><?= htmlspecialchars($hdrSvc['name']) ?></a>
+                </li>
+              <?php endwhile; ?>
             </ul>
           </li>
 

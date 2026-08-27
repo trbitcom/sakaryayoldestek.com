@@ -130,6 +130,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $url_contact->addChild('changefreq', 'monthly');
         $url_contact->addChild('priority', '0.6');
 
+        // Hizmetler
+        $stmtSvc = $pdo->query("SELECT slug FROM services WHERE is_active=1");
+        while ($row = $stmtSvc->fetch()) {
+            $url_svc = $xml->addChild('url');
+            $url_svc->addChild('loc', $url . '/' . $row['slug']);
+            $url_svc->addChild('changefreq', 'monthly');
+            $url_svc->addChild('priority', '0.7');
+        }
+
         // Genel Sayfalar
         $stmtPages = $pdo->query("SELECT slug FROM pages");
         while ($row = $stmtPages->fetch()) {
