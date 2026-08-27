@@ -96,7 +96,7 @@
     }
 
     .navbar.scrolled {
-      background: #1A1A1D !important;
+      background: #002550 !important;
       padding: 5px 0;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
@@ -159,7 +159,7 @@
 
     @media (max-width: 991px) {
       .navbar {
-        background: #1A1A1D !important;
+        background: #002550 !important;
       }
     }
   </style>
@@ -181,7 +181,7 @@
           <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo" height="50"
             class="d-inline-block align-text-center">
         <?php else: ?>
-          <img src="https://via.placeholder.com/150x50/F39C12/1A1A1D?text=LOGO" alt="Placeholder Logo" height="40">
+          <img src="https://via.placeholder.com/150x50/FE790E/002550?text=LOGO" alt="Placeholder Logo" height="40">
         <?php endif; ?>
       </a>
 

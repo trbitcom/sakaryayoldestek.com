@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 .admin-sidebar {
     width: 260px;
     flex-shrink: 0;
-    background: linear-gradient(180deg, #1A1A1D, #232327);
+    background: linear-gradient(180deg, #002550, #0d3a6b);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-link.active {
-    background: rgba(243, 156, 18, 0.14);
+    background: rgba(254, 121, 14, 0.14);
     border-left-color: var(--primary-color);
     color: #fff;
     font-weight: 700;
@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card.text-white.bg-primary {
-    background: linear-gradient(135deg, #1A1A1D, #2c2c31) !important;
+    background: linear-gradient(135deg, #002550, #0d3a6b) !important;
 }
 
 /* Buttons */
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .table-hover tbody tr:hover {
-    background-color: rgba(243, 156, 18, 0.06);
+    background-color: rgba(254, 121, 14, 0.06);
 }
 
 /* Tabs (Ayarlar sayfası) */
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-control:focus,
 .form-select:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(243, 156, 18, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(254, 121, 14, 0.25);
 }
 
 /* Badges */
