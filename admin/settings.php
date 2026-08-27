@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $site_url = trim($_POST['site_url']);
         $phone = trim($_POST['phone']);
         $whatsapp = trim($_POST['whatsapp']);
+        $address = trim($_POST['address'] ?? '');
 
         $stat_happy = trim($_POST['stat_happy'] ?? 0);
         $stat_towed = trim($_POST['stat_towed'] ?? 0);
@@ -67,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        $stmt = $pdo->prepare("UPDATE settings SET site_title=?, site_url=?, phone=?, whatsapp=?, logo=?, favicon=?, stat_happy=?, stat_towed=?, stat_years=?, stat_team=?, about_title=?, about_desc=?, about_image=?, about_exp_years=? WHERE id=1");
-        $stmt->execute([$site_title, $site_url, $phone, $whatsapp, $logoPath, $faviconPath, $stat_happy, $stat_towed, $stat_years, $stat_team, $about_title, $about_desc, $aboutImagePath, $about_exp_years]);
+        $stmt = $pdo->prepare("UPDATE settings SET site_title=?, site_url=?, phone=?, whatsapp=?, address=?, logo=?, favicon=?, stat_happy=?, stat_towed=?, stat_years=?, stat_team=?, about_title=?, about_desc=?, about_image=?, about_exp_years=? WHERE id=1");
+        $stmt->execute([$site_title, $site_url, $phone, $whatsapp, $address, $logoPath, $faviconPath, $stat_happy, $stat_towed, $stat_years, $stat_team, $about_title, $about_desc, $aboutImagePath, $about_exp_years]);
 
         echo '<div class="alert alert-success">Genel ayarlar güncellendi!</div>';
 
@@ -178,96 +179,79 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label class="form-label fw-bold">Telefon</label>
                             <input type="text" name="phone" class="form-control"
                                 value="<?= htmlspecialchars($settings['phone'] ?? '') ?>">
                         </div>
-                        <label class="form-label fw-bold">WhatsApp</label>
-                        <input type="text" name="whatsapp" class="form-control"
-                            value="<?= htmlspecialchars($settings['whatsapp'] ?? '') ?>">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">WhatsApp</label>
+                            <input type="text" name="whatsapp" class="form-control"
+                                value="<?= htmlspecialchars($settings['whatsapp'] ?? '') ?>">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold">Adres</label>
+                            <input type="text" name="address" class="form-control"
+                                value="<?= htmlspecialchars($settings['address'] ?? '') ?>"
+                                placeholder="Tuzla Mah. 51. Cadde No: 5/C, Adapazarı/Sakarya">
+                        </div>
                     </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <label class="form-label fw-bold">Mutlu Müşteri</label>
-                    <input type="number" name="stat_happy" class="form-control"
-                        value="<?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label class="form-label fw-bold">Çekilen Araç</label>
-                    <input type="number" name="stat_towed" class="form-control"
-                        value="<?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label class="form-label fw-bold">Yıllık Tecrübe</label>
-                    <input type="number" name="stat_years" class="form-control"
-                        value="<?= htmlspecialchars($settings['stat_years'] ?? '0') ?>">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">WhatsApp</label>
-                        <input type="text" name="whatsapp" class="form-control"
-                            value="<?= htmlspecialchars($settings['whatsapp'] ?? '') ?>">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label fw-bold">Mutlu Müşteri</label>
+                            <input type="number" name="stat_happy" class="form-control"
+                                value="<?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label fw-bold">Çekilen Araç</label>
+                            <input type="number" name="stat_towed" class="form-control"
+                                value="<?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label fw-bold">Yıllık Tecrübe</label>
+                            <input type="number" name="stat_years" class="form-control"
+                                value="<?= htmlspecialchars($settings['stat_years'] ?? '0') ?>">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label fw-bold">Uzman Personel</label>
+                            <input type="number" name="stat_team" class="form-control"
+                                value="<?= htmlspecialchars($settings['stat_team'] ?? '0') ?>">
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold">Mutlu Müşteri</label>
-                        <input type="number" name="stat_happy" class="form-control"
-                            value="<?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <h5 class="border-bottom pb-2">Hakkımızda Bölümü</h5>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Başlık</label>
+                            <input type="text" name="about_title" class="form-control"
+                                value="<?= htmlspecialchars($settings['about_title'] ?? '') ?>">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Yıllık Tecrübe (Sayı)</label>
+                            <input type="text" name="about_exp_years" class="form-control"
+                                value="<?= htmlspecialchars($settings['about_exp_years'] ?? '15') ?>">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label fw-bold">Açıklama</label>
+                            <textarea name="about_desc" class="form-control"
+                                rows="4"><?= htmlspecialchars($settings['about_desc'] ?? '') ?></textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Hakkımızda Görseli</label>
+                            <input type="file" name="about_image" class="form-control">
+                            <?php if (!empty($settings['about_image'])): ?>
+                                <small>Mevcut: <a href="../public/img/<?= $settings['about_image'] ?>"
+                                        target="_blank"><?= $settings['about_image'] ?></a></small>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold">Çekilen Araç</label>
-                        <input type="number" name="stat_towed" class="form-control"
-                            value="<?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>">
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold">Yıllık Tecrübe</label>
-                        <input type="number" name="stat_years" class="form-control"
-                            value="<?= htmlspecialchars($settings['stat_years'] ?? '0') ?>">
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold">Uzman Personel</label>
-                        <input type="number" name="stat_team" class="form-control"
-                            value="<?= htmlspecialchars($settings['stat_team'] ?? '0') ?>">
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <h5 class="border-bottom pb-2">Hakkımızda Bölümü</h5>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Başlık</label>
-                        <input type="text" name="about_title" class="form-control"
-                            value="<?= htmlspecialchars($settings['about_title'] ?? '') ?>">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Yıllık Tecrübe (Sayı)</label>
-                        <input type="text" name="about_exp_years" class="form-control"
-                            value="<?= htmlspecialchars($settings['about_exp_years'] ?? '15') ?>">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label class="form-label fw-bold">Açıklama</label>
-                        <textarea name="about_desc" class="form-control"
-                            rows="4"><?= htmlspecialchars($settings['about_desc'] ?? '') ?></textarea>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Hakkımızda Görseli</label>
-                        <input type="file" name="about_image" class="form-control">
-                        <?php if (!empty($settings['about_image'])): ?>
-                            <small>Mevcut: <a href="../public/img/<?= $settings['about_image'] ?>"
-                                    target="_blank"><?= $settings['about_image'] ?></a></small>
-                        <?php endif; ?>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label fw-bold">Logo Yükle</label>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Logo Yükle</label>
                         <input type="file" name="logo" class="form-control">
                         <small class="text-muted d-block mt-1">Önerilen Boyut: <b>250x60 px</b> (PNG veya
                             SVG)</small>

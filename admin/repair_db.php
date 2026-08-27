@@ -23,12 +23,12 @@ try {
     }
 
     // Add other potentially missing columns just in case
-    $columns = ['whatsapp', 'google_maps', 'google_analytics', 'phone', 'site_url', 'site_title'];
+    $columns = ['whatsapp', 'google_maps', 'google_analytics', 'phone', 'site_url', 'site_title', 'address'];
     foreach ($columns as $col) {
         try {
             $pdo->query("SELECT $col FROM settings LIMIT 1");
         } catch (PDOException $e) {
-            $type = ($col == 'google_analytics' || $col == 'google_maps') ? 'TEXT' : 'VARCHAR(255)';
+            $type = in_array($col, ['google_analytics', 'google_maps', 'address']) ? 'TEXT' : 'VARCHAR(255)';
             $pdo->exec("ALTER TABLE settings ADD COLUMN $col $type DEFAULT NULL");
             echo "$col sütunu eklendi.<br>";
         }

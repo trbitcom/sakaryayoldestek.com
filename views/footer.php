@@ -19,18 +19,20 @@
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">Hizmetler</h6>
-                <p><a href="#!" class="text-reset">Oto Çekici</a></p>
-                <p><a href="#!" class="text-reset">Akü Takviye</a></p>
-                <p><a href="#!" class="text-reset">Yol Yardım</a></p>
-                <p><a href="#!" class="text-reset">Çoklu Taşıma</a></p>
+                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Oto Çekici</a></p>
+                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Akü Takviye</a></p>
+                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Yol Yardım</a></p>
+                <p><a href="<?= BASE_URL ?>#services" class="text-reset">Çoklu Taşıma</a></p>
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">İletişim</h6>
-                <p><i class="fas fa-home me-3"></i> Sakarya, Türkiye</p>
+                <p><i class="fas fa-home me-3"></i> <?= !empty($settings['address']) ? htmlspecialchars($settings['address']) : 'Sakarya, Türkiye' ?></p>
                 <p><i class="fas fa-envelope me-3"></i> info@otocekici.com</p>
                 <p><i class="fas fa-phone me-3"></i>
                     <?= isset($settings['phone']) ? $settings['phone'] : '0555 123 45 67' ?></p>
+                <p><a href="<?= BASE_URL ?>iletisim" class="text-reset text-decoration-underline">İletişim
+                        Sayfası →</a></p>
             </div>
         </div>
 

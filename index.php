@@ -32,6 +32,13 @@ if ($currentSlug == 'bolgeler') {
     exit;
 }
 
+if ($currentSlug == 'iletisim') {
+    $metaTitle = "İletişim - " . (defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici');
+    $metaDesc = "Sakarya Yol Destek ile iletişime geçin. Telefon, WhatsApp ve adres bilgilerimiz.";
+    require_once 'views/contact.php';
+    exit;
+}
+
 // 2. Durum: Veritabanında bu URL var mı? (Locations tablosuna bak)
 $stmt = $pdo->prepare("SELECT * FROM locations WHERE slug = :slug AND is_active = 1");
 $stmt->execute(['slug' => $currentSlug]);

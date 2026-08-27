@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <a href="#contact" class="btn btn-dark rounded-pill px-5 py-3 fw-bold shadow hover-scale">
+                <a href="<?= BASE_URL ?>iletisim" class="btn btn-dark rounded-pill px-5 py-3 fw-bold shadow hover-scale">
                     <i class="fas fa-arrow-right me-2"></i> BİZE ULAŞIN
                 </a>
             </div>

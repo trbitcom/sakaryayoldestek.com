@@ -193,12 +193,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Hizmetlerimiz</a>
             <ul class="dropdown-menu shadow border-0">
-              <li><a class="dropdown-item" href="#"><i class="fas fa-truck-pickup text-warning me-2"></i>Oto Çekici</a>
+              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-truck-pickup text-warning me-2"></i>Oto Çekici</a>
               </li>
-              <li><a class="dropdown-item" href="#"><i class="fas fa-tools text-warning me-2"></i>Yol Yardım</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fas fa-car-battery text-warning me-2"></i>Akü Takviye</a>
+              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-tools text-warning me-2"></i>Yol Yardım</a></li>
+              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-car-battery text-warning me-2"></i>Akü Takviye</a>
               </li>
-              <li><a class="dropdown-item" href="#"><i class="fas fa-car text-warning me-2"></i>Sıfır Araç Taşıma</a>
+              <li><a class="dropdown-item" href="<?= BASE_URL ?>#services"><i class="fas fa-car text-warning me-2"></i>Sıfır Araç Taşıma</a>
               </li>
             </ul>
           </li>
@@ -222,8 +222,8 @@
             </ul>
           </li>
 
-          <li class="nav-item"><a class="nav-link px-3" href="#">Kurumsal</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#contact">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>#about">Kurumsal</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>iletisim">İletişim</a></li>
         </ul>
 
         <div class="d-none d-lg-block">
