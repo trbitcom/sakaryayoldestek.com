@@ -1,3 +1,9 @@
 .DS_Store
 Yeni Metin Belgesi.txt
 app/db.credentials.php
+
+# Admin panelinden yüklenen içerikler — canlıda deploy'ların ezmemesi için
+# git dışında tutuluyor (logo, favicon, hakkımızda görseli, hero video, referans logoları)
+public/img/*
+!public/img/references/
+public/img/references/*
