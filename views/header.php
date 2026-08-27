@@ -235,7 +235,7 @@
             </ul>
           </li>
 
-          <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>#about">Kurumsal</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>kurumsal">Kurumsal</a></li>
           <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>iletisim">İletişim</a></li>
         </ul>
 
