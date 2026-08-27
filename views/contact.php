@@ -27,7 +27,7 @@
                     <div class="mb-3">
                         <i class="fas fa-phone-alt fa-2x text-warning"></i>
                     </div>
-                    <h5 class="fw-bold">Telefon</h5>
+                    <h2 class="h5 fw-bold">Telefon</h2>
                     <p class="text-muted mb-3">7/24 acil hattımız</p>
                     <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
                         class="btn btn-danger rounded-pill fw-bold px-4">
@@ -40,7 +40,7 @@
                     <div class="mb-3">
                         <i class="fab fa-whatsapp fa-2x text-success"></i>
                     </div>
-                    <h5 class="fw-bold">WhatsApp</h5>
+                    <h2 class="h5 fw-bold">WhatsApp</h2>
                     <p class="text-muted mb-3">Konumunuzu anında gönderin</p>
                     <a href="https://wa.me/<?= isset($settings['whatsapp']) ? $settings['whatsapp'] : '905551234567' ?>"
                         class="btn btn-success rounded-pill fw-bold px-4">
@@ -53,7 +53,7 @@
                     <div class="mb-3">
                         <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
                     </div>
-                    <h5 class="fw-bold">Adres</h5>
+                    <h2 class="h5 fw-bold">Adres</h2>
                     <p class="text-muted mb-0">
                         <?= !empty($settings['address']) ? nl2br(htmlspecialchars($settings['address'])) : 'Sakarya, Türkiye' ?>
                     </p>

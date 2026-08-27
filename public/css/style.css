@@ -89,7 +89,9 @@ h4,
 h5,
 h6,
 .navbar-brand,
-.btn-lg {
+.btn-lg,
+.counter,
+.trust-badge-title {
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
 }

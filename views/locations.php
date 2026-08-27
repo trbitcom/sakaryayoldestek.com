@@ -29,9 +29,9 @@
                         class="card h-100 text-decoration-none border shadow-sm hover-up text-center p-3">
                         <div class="card-body p-2">
                             <i class="fas fa-map-marker-alt text-danger fa-2x mb-3"></i>
-                            <h5 class="card-title text-dark fw-bold m-0">
+                            <h2 class="h5 card-title text-dark fw-bold m-0">
                                 <?= htmlspecialchars($row['name']) ?>
-                            </h5>
+                            </h2>
                         </div>
                     </a>
                 </div>
@@ -41,7 +41,7 @@
         <!-- No Results Message -->
         <div id="noResults" class="text-center py-5 d-none">
             <i class="fas fa-search-location fa-3x text-muted mb-3"></i>
-            <h4 class="text-muted">Aradığınız bölge bulunamadı.</h4>
+            <h2 class="h4 text-muted">Aradığınız bölge bulunamadı.</h2>
             <p>Yine de bizi arayabilirsiniz, belki oraya da geliyoruz!</p>
             <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
                 class="btn btn-primary rounded-pill px-4">

@@ -45,7 +45,7 @@
                 <div class="col-md-6">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-5 border-warning">
                         <i class="fas fa-clock fa-2x text-warning mb-3"></i>
-                        <h4 class="fw-bold">Hızlı Varış</h4>
+                        <h3 class="h4 fw-bold">Hızlı Varış</h3>
                         <p class="text-muted m-0"><?= htmlspecialchars($location['name']) ?> trafik durumuna hakimiz. En
                             kısa yoldan yanınıza ulaşıyoruz.</p>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="col-md-6">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-5 border-primary">
                         <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
-                        <h4 class="fw-bold">Güvenli Taşıma</h4>
+                        <h3 class="h4 fw-bold">Güvenli Taşıma</h3>
                         <p class="text-muted m-0">Aracınız sigortalı olarak taşınır. Gözünüz arkada kalmasın.</p>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="card bg-dark text-white border-0 shadow rounded-4 mb-4 overflow-hidden text-center">
                     <div class="card-body p-4">
                         <i class="fas fa-headset fa-3x text-warning mb-3"></i>
-                        <h4 class="fw-bold">Acil Yardım Hattı</h4>
+                        <h3 class="h4 fw-bold">Acil Yardım Hattı</h3>
                         <p class="text-white-50">Müşteri temsilcimiz çağrınızı bekliyor.</p>
                         <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
                             class="btn btn-warning w-100 py-3 fw-bold rounded-pill text-dark fs-5 animate-pulse">

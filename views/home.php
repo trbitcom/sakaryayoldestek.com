@@ -33,7 +33,7 @@
             <div class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center">
                 <i class="fas fa-stopwatch trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
                 <div class="text-center text-md-start">
-                    <h5 class="m-0 fw-bold trust-badge-title">15 DAKİKADA VARIŞ</h5>
+                    <p class="m-0 fw-bold trust-badge-title">15 DAKİKADA VARIŞ</p>
                     <small class="text-muted d-none d-md-block">En Yakın Ekip Yönlendirilir</small>
                 </div>
             </div>
@@ -41,14 +41,14 @@
                 class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center border-start border-end border-secondary">
                 <i class="fas fa-shield-alt trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
                 <div class="text-center text-md-start">
-                    <h5 class="m-0 fw-bold trust-badge-title">KASKOLU TAŞIMA</h5>
+                    <p class="m-0 fw-bold trust-badge-title">KASKOLU TAŞIMA</p>
                     <small class="text-muted d-none d-md-block">Aracınız Güvencemiz Altında</small>
                 </div>
             </div>
             <div class="col-4 trust-badge-item d-flex flex-column flex-md-row align-items-center justify-content-center">
                 <i class="fas fa-lira-sign trust-badge-icon text-warning mb-2 mb-md-0 me-md-3"></i>
                 <div class="text-center text-md-start">
-                    <h5 class="m-0 fw-bold trust-badge-title">UYGUN FİYAT</h5>
+                    <p class="m-0 fw-bold trust-badge-title">UYGUN FİYAT</p>
                     <small class="text-muted d-none d-md-block">Sürpriz Ekstra Ücret Yok</small>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h5 class="text-warning fw-bold text-uppercase mb-3 tracking-widest">Hakkımızda</h5>
+                <p class="text-warning fw-bold text-uppercase mb-3 tracking-widest" style="font-family: 'Rajdhani', sans-serif;">Hakkımızda</p>
                 <h2 class="display-5 fw-bold mb-4">
                     <?= htmlspecialchars($settings['about_title'] ?? 'Güvenilir ve Hızlı Çekici Çözüm Ortağınız') ?>
                 </h2>
@@ -127,7 +127,7 @@
                                 <div class="d-inline-block p-3 rounded-circle bg-light mb-3 text-warning">
                                     <i class="fas <?= htmlspecialchars($svc['icon'] ?: 'fa-truck-pickup') ?> fa-2x"></i>
                                 </div>
-                                <h4 class="fw-bold mb-3 text-dark"><?= htmlspecialchars($svc['name']) ?></h4>
+                                <h3 class="h4 fw-bold mb-3 text-dark"><?= htmlspecialchars($svc['name']) ?></h3>
                                 <p class="text-muted"><?= htmlspecialchars($svc['short_desc']) ?></p>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                                 <div class="mb-3 d-inline-block p-2 rounded-circle bg-light text-danger">
                                     <i class="fas fa-map-marker-alt fa-lg"></i>
                                 </div>
-                                <h5 class="card-title text-dark fw-bold m-0 fs-6"><?= htmlspecialchars($row['name']) ?></h5>
+                                <h3 class="card-title text-dark fw-bold m-0 fs-6"><?= htmlspecialchars($row['name']) ?></h3>
                                 <small class="text-muted text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">OTO
                                     ÇEKİCİ</small>
                             </div>
@@ -253,12 +253,12 @@
                 <div class="accordion custom-accordion" id="faqAccordion">
 
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
-                        <h2 class="accordion-header">
+                        <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#faq1">
                                 <i class="fas fa-clock text-warning me-3"></i>Çekici bekleme süresi ne kadar?
                             </button>
-                        </h2>
+                        </h3>
                         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted ps-5">
                                 Konumunuza bağlı olarak ortalama varış süremiz 15 ile 30 dakika arasındadır. Trafik
@@ -268,12 +268,12 @@
                     </div>
 
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
-                        <h2 class="accordion-header">
+                        <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#faq2">
                                 <i class="fas fa-shield-alt text-warning me-3"></i>Araçlarım sigortalı mı taşınıyor?
                             </button>
-                        </h2>
+                        </h3>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted ps-5">
                                 Evet, taşıdığımız tüm araçlar "Taşıyıcı Sorumluluk Sigortası" kapsamında tam güvence
@@ -283,12 +283,12 @@
                     </div>
 
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
-                        <h2 class="accordion-header">
+                        <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#faq3">
                                 <i class="fas fa-lira-sign text-warning me-3"></i>Fiyatlarınız neye göre belirleniyor?
                             </button>
-                        </h2>
+                        </h3>
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted ps-5">
                                 Fiyatlandırma; aracın türü, durumu (kazalı/arızalı), gideceği mesafe ve kullanılacak
@@ -329,27 +329,27 @@
     <div class="container py-4">
         <div class="row text-center g-4">
             <div class="col-6 col-md-3">
-                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                <div class="display-4 fw-bold text-warning mb-0 counter">
                     <?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>+
-                </h2>
+                </div>
                 <p class="text-uppercase tracking-widest text-light mt-2 small">Mutlu Müşteri</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
-                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                <div class="display-4 fw-bold text-warning mb-0 counter">
                     <?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>+
-                </h2>
+                </div>
                 <p class="text-uppercase tracking-widest text-light mt-2 small">Çekilen Araç</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
-                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                <div class="display-4 fw-bold text-warning mb-0 counter">
                     <?= htmlspecialchars($settings['stat_years'] ?? '0') ?>
-                </h2>
+                </div>
                 <p class="text-uppercase tracking-widest text-light mt-2 small">Yıllık Tecrübe</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
-                <h2 class="display-4 fw-bold text-warning mb-0 counter">
+                <div class="display-4 fw-bold text-warning mb-0 counter">
                     <?= htmlspecialchars($settings['stat_team'] ?? '0') ?>
-                </h2>
+                </div>
                 <p class="text-uppercase tracking-widest text-light mt-2 small">Uzman Personel</p>
             </div>
         </div>

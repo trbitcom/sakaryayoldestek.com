@@ -100,7 +100,7 @@
     /* Custom Header Styles */
     .navbar {
       transition: all 0.4s ease;
-      background: rgba(0, 0, 0, 0.2) !important;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1)) !important;
       padding: 10px 0;
     }
 
@@ -194,7 +194,8 @@
         <?php endif; ?>
       </a>
 
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat">
         <span class="navbar-toggler-icon"></span>
       </button>
 
