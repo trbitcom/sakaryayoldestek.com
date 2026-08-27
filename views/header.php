@@ -7,6 +7,9 @@
   <title><?= isset($metaTitle) ? $metaTitle : (defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici') ?></title>
   <meta name="description" content="<?= isset($metaDesc) ? $metaDesc : '' ?>">
 
+  <!-- Google Search Console Doğrulama -->
+  <meta name="google-site-verification" content="D2QGu9N-tQMcFNUbDdPkFtQJmwGFhHCPsFLRUY5A1lE" />
+
   <?php
   // Canonical URL ve Open Graph için mevcut sayfa adresini hesapla
   $currentPath = isset($url) ? implode('/', array_filter($url)) : '';
