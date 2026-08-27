@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: http://localhost/oto-cekici-projesi/sitemap.xml
+Sitemap: https://sakaryayoldestek.com/sitemap.xml
