@@ -123,6 +123,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $url_bolgeler->addChild('changefreq', 'weekly');
         $url_bolgeler->addChild('priority', '0.6');
 
+        // İletişim
+        $url_contact = $xml->addChild('url');
+        $url_contact->addChild('loc', $url . '/iletisim');
+        $url_contact->addChild('changefreq', 'monthly');
+        $url_contact->addChild('priority', '0.6');
+
         // Genel Sayfalar
         $stmtPages = $pdo->query("SELECT slug FROM pages");
         while ($row = $stmtPages->fetch()) {
