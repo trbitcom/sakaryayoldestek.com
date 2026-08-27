@@ -110,6 +110,13 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
+    /* Mobilde aşağı kaydırınca navbar'ı gizle, yukarı kaydırınca göster */
+    @media (max-width: 991.98px) {
+      .navbar.nav-hidden {
+        transform: translateY(-100%);
+      }
+    }
+
     .nav-link {
       font-family: 'Rajdhani', sans-serif;
       font-weight: 600;

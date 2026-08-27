@@ -77,14 +77,37 @@
 
 <!-- Navbar Scroll Script -->
 <script>
-    window.addEventListener('scroll', function () {
+    (function () {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        const navbarCollapse = document.getElementById('navbarNav');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', function () {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Mobilde aşağı kaydırınca gizle, yukarı kaydırınca göster
+            const isMobile = window.innerWidth < 992;
+            const menuOpen = navbarCollapse && navbarCollapse.classList.contains('show');
+
+            if (isMobile && !menuOpen) {
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                    navbar.classList.add('nav-hidden');
+                } else {
+                    navbar.classList.remove('nav-hidden');
+                }
+            } else {
+                navbar.classList.remove('nav-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    })();
 </script>
 
 </body>
