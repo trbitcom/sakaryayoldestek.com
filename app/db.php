@@ -1,9 +1,13 @@
 <?php
 try {
-    $host = 'localhost';
-    $dbname = 'oto_cekici';
-    $user = 'root';
-    $pass = ''; 
+    if (($_SERVER['SERVER_NAME'] ?? '') !== 'localhost' && file_exists(__DIR__ . '/db.credentials.php')) {
+        require __DIR__ . '/db.credentials.php'; // $host, $dbname, $user, $pass tanımlar (git'e dahil değil)
+    } else {
+        $host = 'localhost';
+        $dbname = 'oto_cekici';
+        $user = 'root';
+        $pass = '';
+    }
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
