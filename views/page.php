@@ -5,7 +5,7 @@
         style="background: linear-gradient(135deg, rgba(26,26,29,0.95), rgba(26,26,29,0.8)); z-index: 1;"></div>
     <!-- Decorative Circle -->
     <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-warning opacity-10"
-        style="width: 500px; height: 500px; filter: blur(100px); z-index: 0;"></div>
+        style="width: min(500px, 80vw); height: min(500px, 80vw); filter: blur(100px); z-index: 0;"></div>
 
     <div class="container position-relative h-100 d-flex flex-column justify-content-center" style="z-index: 2;">
         <h1 class="display-4 fw-bold mb-0 text-warning text-center"><?= htmlspecialchars($page['title']) ?></h1>
