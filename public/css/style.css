@@ -266,7 +266,7 @@ h6,
 /* Footer */
 footer {
     background-color: var(--secondary-color);
-    color: #bdc3c7;
+    color: #e2e6e9;
 }
 
 footer h5 {
@@ -279,7 +279,7 @@ footer ul li {
 }
 
 footer a {
-    color: #bdc3c7;
+    color: #e2e6e9;
     text-decoration: none;
     transition: 0.2s;
 }

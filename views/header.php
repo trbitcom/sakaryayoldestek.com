@@ -79,14 +79,24 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+  <!-- Google Fonts (render-blocking olmasın diye preload + swap) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+  </noscript>
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 (kritik, layout için render-blocking kalsın) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- FontAwesome (dekoratif ikonlar, render-blocking olmasın diye preload + swap) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="<?= BASE_URL ?>public/css/style.css">
@@ -100,7 +110,7 @@
     /* Custom Header Styles */
     .navbar {
       transition: all 0.4s ease;
-      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1)) !important;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)) !important;
       padding: 10px 0;
     }
 
@@ -194,7 +204,7 @@
     <div class="container">
       <a class="navbar-brand fw-bold fs-3" href="<?= BASE_URL ?>">
         <?php if (isset($settings['logo']) && !empty($settings['logo'])): ?>
-          <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo" height="50"
+          <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo" width="208" height="50"
             class="d-inline-block align-text-center">
         <?php else: ?>
           <img src="https://via.placeholder.com/150x50/FE790E/002550?text=LOGO" alt="Placeholder Logo" height="40">

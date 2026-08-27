@@ -65,7 +65,7 @@
                     <?php
                     $aboutImg = !empty($settings['about_image']) ? BASE_URL . 'public/img/' . htmlspecialchars($settings['about_image']) : 'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&q=80&w=800';
                     ?>
-                    <img src="<?= $aboutImg ?>" class="img-fluid rounded-4 shadow-lg" alt="Hakkımızda">
+                    <img src="<?= $aboutImg ?>" class="img-fluid rounded-4 shadow-lg" alt="Hakkımızda" width="900" height="675">
                     <div class="position-absolute bottom-0 start-0 bg-warning p-4 rounded-end-4 shadow"
                         style="margin-bottom: -20px;">
                         <span
@@ -153,6 +153,7 @@
                         foreach ($refs as $ref): ?>
                             <div class="d-inline-block mx-4 align-middle">
                                 <img src="<?= BASE_URL ?>public/img/references/<?= htmlspecialchars($ref['image']) ?>"
+                                    alt="Referans firma logosu" width="160" height="80"
                                     style="height: 80px; width: auto; filter: grayscale(100%); opacity: 0.7; transition: 0.3s;"
                                     class="ref-logo"
                                     onmouseover="this.style.filter='none'; this.style.opacity='1'; this.style.transform='scale(1.1)'"

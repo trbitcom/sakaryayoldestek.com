@@ -5,7 +5,7 @@
                 <h3 class="h6 text-uppercase fw-bold mb-4">
                     <?php if (isset($settings['logo']) && !empty($settings['logo'])): ?>
                         <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo"
-                            height="50" class="d-inline-block align-text-top">
+                            width="208" height="50" class="d-inline-block align-text-top">
                     <?php else: ?>
                         <i class="fas fa-truck-pickup me-3 text-warning"></i>
                         <?= defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici' ?>
