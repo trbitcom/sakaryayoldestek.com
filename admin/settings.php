@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phone = trim($_POST['phone']);
         $whatsapp = trim($_POST['whatsapp']);
         $address = trim($_POST['address'] ?? '');
+        $owner_name = trim($_POST['owner_name'] ?? '');
 
         $stat_happy = trim($_POST['stat_happy'] ?? 0);
         $stat_towed = trim($_POST['stat_towed'] ?? 0);
@@ -68,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        $stmt = $pdo->prepare("UPDATE settings SET site_title=?, site_url=?, phone=?, whatsapp=?, address=?, logo=?, favicon=?, stat_happy=?, stat_towed=?, stat_years=?, stat_team=?, about_title=?, about_desc=?, about_image=?, about_exp_years=? WHERE id=1");
-        $stmt->execute([$site_title, $site_url, $phone, $whatsapp, $address, $logoPath, $faviconPath, $stat_happy, $stat_towed, $stat_years, $stat_team, $about_title, $about_desc, $aboutImagePath, $about_exp_years]);
+        $stmt = $pdo->prepare("UPDATE settings SET site_title=?, site_url=?, phone=?, whatsapp=?, address=?, owner_name=?, logo=?, favicon=?, stat_happy=?, stat_towed=?, stat_years=?, stat_team=?, about_title=?, about_desc=?, about_image=?, about_exp_years=? WHERE id=1");
+        $stmt->execute([$site_title, $site_url, $phone, $whatsapp, $address, $owner_name, $logoPath, $faviconPath, $stat_happy, $stat_towed, $stat_years, $stat_team, $about_title, $about_desc, $aboutImagePath, $about_exp_years]);
 
         echo '<div class="alert alert-success">Genel ayarlar güncellendi!</div>';
 
@@ -185,17 +186,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label class="form-label fw-bold">Telefon</label>
                             <input type="text" name="phone" class="form-control"
                                 value="<?= htmlspecialchars($settings['phone'] ?? '') ?>">
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label class="form-label fw-bold">WhatsApp</label>
                             <input type="text" name="whatsapp" class="form-control"
                                 value="<?= htmlspecialchars($settings['whatsapp'] ?? '') ?>">
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label fw-bold">İşletme Sahibi</label>
+                            <input type="text" name="owner_name" class="form-control"
+                                value="<?= htmlspecialchars($settings['owner_name'] ?? '') ?>"
+                                placeholder="Ad Soyad">
+                        </div>
+                        <div class="col-md-3 mb-3">
                             <label class="form-label fw-bold">Adres</label>
                             <input type="text" name="address" class="form-control"
                                 value="<?= htmlspecialchars($settings['address'] ?? '') ?>"

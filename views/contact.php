@@ -11,6 +11,10 @@
     <div class="container position-relative h-100 d-flex flex-column justify-content-center" style="z-index: 2;">
         <h1 class="display-4 fw-bold mb-0 text-warning text-center">İletişim</h1>
         <p class="text-center text-white-50 mb-0 mt-2">7/24 ulaşabilirsiniz, size en yakın ekibimizi yönlendirelim.</p>
+        <?php if (!empty($settings['owner_name'])): ?>
+            <p class="text-center text-white-50 mb-0 mt-1 small">İşletme Sahibi: <span
+                    class="text-white fw-bold"><?= htmlspecialchars($settings['owner_name']) ?></span></p>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -53,6 +57,12 @@
                     <p class="text-muted mb-0">
                         <?= !empty($settings['address']) ? nl2br(htmlspecialchars($settings['address'])) : 'Sakarya, Türkiye' ?>
                     </p>
+                    <?php if (!empty($settings['owner_name'])): ?>
+                        <p class="text-muted small mt-2 mb-0 border-top pt-2">
+                            <i class="fas fa-user-tie me-1"></i> İşletme Sahibi:
+                            <strong><?= htmlspecialchars($settings['owner_name']) ?></strong>
+                        </p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

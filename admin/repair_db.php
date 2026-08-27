@@ -23,7 +23,7 @@ try {
     }
 
     // Add other potentially missing columns just in case
-    $columns = ['whatsapp', 'google_maps', 'google_analytics', 'phone', 'site_url', 'site_title', 'address'];
+    $columns = ['whatsapp', 'google_maps', 'google_analytics', 'phone', 'site_url', 'site_title', 'address', 'owner_name'];
     foreach ($columns as $col) {
         try {
             $pdo->query("SELECT $col FROM settings LIMIT 1");
