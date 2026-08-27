@@ -12,6 +12,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
+
+$navItems = [
+  ['href' => 'index.php', 'icon' => 'fa-chart-pie', 'label' => 'Anasayfa', 'match' => ['index.php']],
+  ['href' => 'locations.php', 'icon' => 'fa-map-marker-alt', 'label' => 'Bölgeler', 'match' => ['locations.php', 'location-add.php']],
+  ['href' => 'references.php', 'icon' => 'fa-handshake', 'label' => 'Referanslar', 'match' => ['references.php']],
+  ['href' => 'pages.php', 'icon' => 'fa-file-alt', 'label' => 'Sayfalar', 'match' => ['pages.php', 'page_edit.php']],
+  ['href' => 'settings.php', 'icon' => 'fa-cog', 'label' => 'Ayarlar', 'match' => ['settings.php']],
+];
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -27,79 +35,55 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
   <!-- Marka Renkleri ve Fontlar (frontend ile ortak) -->
   <link rel="stylesheet" href="../public/css/style.css">
   <link rel="stylesheet" href="../public/css/admin.css">
-
-  <style>
-    /* Table responsiveness fix */
-    @media (max-width: 768px) {
-      .table-responsive-stack tr {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-        border: 1px solid #dee2e6;
-        border-radius: 10px;
-        padding: 10px;
-        background: white;
-      }
-
-      .table-responsive-stack td {
-        display: flex;
-        justify-content: space-between;
-        border: none;
-        padding: 0.5rem 0;
-      }
-
-      .table-responsive-stack td:before {
-        content: attr(data-label);
-        font-weight: bold;
-        margin-right: 1rem;
-        color: #6c757d;
-      }
-
-      .table-responsive-stack thead {
-        display: none;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark admin-navbar shadow-sm mb-4">
-    <div class="container">
-      <a class="navbar-brand" href="index.php"><i class="fas fa-truck-pickup me-2"></i>Sakarya Yol Destek</a>
+  <div class="admin-shell">
 
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand">
+        <i class="fas fa-truck-pickup"></i>
+        <span>Sakarya Yol Destek</span>
+      </div>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link text-white<?= $currentPage === 'index.php' ? ' active' : '' ?>" href="index.php"><i class="fas fa-home me-1"></i>
-              Anasayfa</a></li>
-          <li class="nav-item"><a class="nav-link text-white<?= in_array($currentPage, ['locations.php', 'location-add.php']) ? ' active' : '' ?>" href="locations.php"><i
-                class="fas fa-map-marker-alt me-1"></i> Bölgeler</a></li>
-          <li class="nav-item"><a class="nav-link text-white<?= $currentPage === 'references.php' ? ' active' : '' ?>" href="references.php"><i
-                class="fas fa-handshake me-1"></i> Referanslar</a></li>
-          <li class="nav-item"><a class="nav-link text-white<?= in_array($currentPage, ['pages.php', 'page_edit.php']) ? ' active' : '' ?>" href="pages.php"><i class="fas fa-file-alt me-1"></i>
-              Sayfalar</a></li>
-          <li class="nav-item"><a class="nav-link text-white<?= $currentPage === 'settings.php' ? ' active' : '' ?>" href="settings.php"><i class="fas fa-cog me-1"></i>
-              Ayarlar</a></li>
-          <li class="nav-item"><a class="nav-link text-white opacity-75" href="../" target="_blank"><i
-                class="fas fa-external-link-alt me-1"></i> Siteye Git</a></li>
-        </ul>
-
-        <div class="d-flex align-items-center mt-3 mt-lg-0">
-          <div class="text-white me-3 d-none d-lg-block">
-            <small>Merhaba,</small> <span
-              class="fw-bold"><?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Yönetici' ?></span>
-          </div>
-          <a class="btn btn-light btn-sm fw-bold text-primary" href="logout.php">
-            <i class="fas fa-sign-out-alt me-1"></i> Çıkış
+      <nav class="sidebar-nav">
+        <?php foreach ($navItems as $item): ?>
+          <a class="sidebar-link<?= in_array($currentPage, $item['match']) ? ' active' : '' ?>" href="<?= $item['href'] ?>">
+            <i class="fas <?= $item['icon'] ?>"></i> <span><?= $item['label'] ?></span>
           </a>
+        <?php endforeach; ?>
+
+        <div class="sidebar-divider"></div>
+
+        <a class="sidebar-link" href="../" target="_blank">
+          <i class="fas fa-external-link-alt"></i> <span>Siteye Git</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">
+          <?= strtoupper(substr($_SESSION['username'] ?? 'Y', 0, 1)) ?>
+        </div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name"><?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Yönetici' ?></div>
+          <a href="logout.php" class="sidebar-user-logout"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
         </div>
       </div>
-    </div>
-  </nav>
+    </aside>
 
-  <div class="container">
-    <!-- Main Content Start -->
+    <!-- Main -->
+    <div class="admin-main">
+      <div class="admin-topbar d-flex d-lg-none align-items-center justify-content-between">
+        <button class="admin-sidebar-toggle" type="button" id="sidebarToggleBtn" aria-label="Menüyü aç">
+          <i class="fas fa-bars"></i>
+        </button>
+        <span class="fw-bold"><i class="fas fa-truck-pickup me-2 text-warning"></i>Yönetim Paneli</span>
+        <a href="../" target="_blank" class="text-muted"><i class="fas fa-external-link-alt"></i></a>
+      </div>
+
+      <div class="admin-sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <div class="container-fluid admin-content">
+        <!-- Main Content Start -->
