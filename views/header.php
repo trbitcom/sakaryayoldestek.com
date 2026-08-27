@@ -73,6 +73,15 @@
     <link rel="icon" type="image/x-icon" href="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['favicon']) ?>">
   <?php endif; ?>
 
+  <!-- Dış kaynaklara erken bağlantı (performans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap">
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
