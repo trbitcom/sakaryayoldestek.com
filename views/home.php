@@ -452,16 +452,16 @@ $faqSchema = [
     <div class="container py-4">
         <div class="row text-center g-4">
             <div class="col-6 col-md-3">
-                <div class="display-4 fw-bold text-warning mb-0 counter">
-                    <?= htmlspecialchars($settings['stat_happy'] ?? '0') ?>+
+                <div class="mb-0">
+                    <i class="fas fa-shield-alt fa-2x text-warning"></i>
                 </div>
-                <p class="text-uppercase tracking-widest text-light mt-2 small">Mutlu Müşteri</p>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Sigortalı Taşıma</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
-                <div class="display-4 fw-bold text-warning mb-0 counter">
-                    <?= htmlspecialchars($settings['stat_towed'] ?? '0') ?>+
+                <div class="mb-0">
+                    <i class="fas fa-clock fa-2x text-warning"></i>
                 </div>
-                <p class="text-uppercase tracking-widest text-light mt-2 small">Çekilen Araç</p>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">7/24 Aktif Hizmet</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
                 <div class="display-4 fw-bold text-warning mb-0 counter">
