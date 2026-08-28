@@ -44,7 +44,7 @@
   }
   $schema = [
       '@context' => 'https://schema.org',
-      '@type' => 'AutoRepair',
+      '@type' => 'AutomotiveBusiness',
       'name' => $settings['site_title'] ?? (defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici'),
       'image' => !empty($settings['logo']) ? (BASE_URL . 'public/img/' . $settings['logo']) : null,
       'url' => rtrim(BASE_URL, '/'),
@@ -52,6 +52,7 @@
       'priceRange' => '$$',
       'address' => [
           '@type' => 'PostalAddress',
+          'streetAddress' => $settings['address'] ?? null,
           'addressLocality' => 'Sakarya',
           'addressRegion' => 'Sakarya',
           'addressCountry' => 'TR',
@@ -204,7 +205,7 @@
     <div class="container">
       <a class="navbar-brand fw-bold fs-3" href="<?= BASE_URL ?>">
         <?php if (isset($settings['logo']) && !empty($settings['logo'])): ?>
-          <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo" width="208" height="50"
+          <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Sakarya Yol Destek - Oto Çekici Logosu" width="208" height="50"
             class="d-inline-block align-text-center">
         <?php else: ?>
           <img src="https://via.placeholder.com/150x50/FE790E/002550?text=LOGO" alt="Placeholder Logo" height="40">

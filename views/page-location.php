@@ -46,8 +46,8 @@
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-start border-5 border-warning">
                         <i class="fas fa-clock fa-2x text-warning mb-3"></i>
                         <h3 class="h4 fw-bold">Hızlı Varış</h3>
-                        <p class="text-muted m-0"><?= htmlspecialchars($location['name']) ?> trafik durumuna hakimiz. En
-                            kısa yoldan yanınıza ulaşıyoruz.</p>
+                        <p class="text-muted m-0">Bölgeye yayılmış ekiplerimiz sayesinde trafik yoğunluğuna
+                            takılmadan en kısa güzergahtan yanınıza ulaşıyoruz.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -111,7 +111,7 @@
 <section class="py-5 bg-primary text-white text-center">
     <div class="container">
         <h2 class="fw-bold mb-3">ARACINIZ GÜVENDE!</h2>
-        <p class="fs-4 mb-4"><?= htmlspecialchars($location['name']) ?> bölgesinde binlerce memnun müşteri.</p>
+        <p class="fs-4 mb-4"><?= htmlspecialchars($location['name']) ?> bölgesinde sigortalı ve şeffaf fiyatlı hizmet.</p>
         <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
             class="btn btn-light btn-lg rounded-pill px-5 fw-bold shadow">
             <i class="fas fa-phone me-2 text-primary"></i> HEMEN DESTEK AL

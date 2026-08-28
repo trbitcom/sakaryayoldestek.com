@@ -4,7 +4,7 @@
             <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h3 class="h6 text-uppercase fw-bold mb-4">
                     <?php if (isset($settings['logo']) && !empty($settings['logo'])): ?>
-                        <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Logo"
+                        <img src="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['logo']) ?>" alt="Sakarya Yol Destek - Oto Çekici Logosu"
                             width="208" height="50" class="d-inline-block align-text-top">
                     <?php else: ?>
                         <i class="fas fa-truck-pickup me-3 text-warning"></i>
@@ -30,7 +30,7 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h3 class="h6 text-uppercase fw-bold mb-4">İletişim</h3>
                 <p><i class="fas fa-home me-3"></i> <?= !empty($settings['address']) ? htmlspecialchars($settings['address']) : 'Sakarya, Türkiye' ?></p>
-                <p><i class="fas fa-envelope me-3"></i> info@otocekici.com</p>
+                <p><i class="fas fa-envelope me-3"></i> info@sakaryayoldestek.com</p>
                 <p><i class="fas fa-phone me-3"></i>
                     <?= isset($settings['phone']) ? $settings['phone'] : '0555 123 45 67' ?></p>
                 <p><a href="<?= BASE_URL ?>iletisim" class="text-reset text-decoration-underline">İletişim

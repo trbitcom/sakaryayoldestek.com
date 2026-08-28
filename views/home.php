@@ -245,6 +245,66 @@
     }
 </style>
 
+<!-- Bilgilendirici İçerik Bloğu -->
+<section class="py-5 bg-white">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <h2 class="fw-bold mb-4">Sakarya Oto Çekici ve Yol Yardım Hizmeti Hakkında Bilmeniz Gerekenler</h2>
+                <div class="text-muted" style="line-height: 1.9; font-size: 1.05rem;">
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Hangi Durumlarda Çekici Çağırmalısınız?</h3>
+                    <p>Aracınız trafik ortasında, otoyolda veya park halindeyken hareket edemez duruma geldiğinde
+                        çekici hizmetine ihtiyaç duyarsınız. En sık karşılaşılan durumlar arasında motor arızası,
+                        şanzıman sorunu, kaza sonrası hasar, lastik patlaması sonrası stepnesi olmayan araçlar,
+                        yakıt bitmesi (özellikle dizel araçlarda hava alması durumunda) ve elektrik/elektronik
+                        arızalar yer alır. Bu durumların bazılarında (akü, lastik, yakıt) yerinde müdahale
+                        yeterli olabilirken, aracın sürüşe uygun olmadığı ciddi arıza ve kazalarda çekici
+                        şarttır.</p>
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Hangi Araç Tiplerine Hizmet Veriyoruz?</h3>
+                    <p>Binek otomobiller ve SUV'lardan hafif ticari araçlara, motosikletlerden ağır vasıtalara
+                        (kamyon, tır, otobüs, iş makinesi) kadar geniş bir araç yelpazesine hizmet veriyoruz.
+                        Elektrikli ve hibrit araçlar için özel platformlu taşıma, sıfır km araçlar için ise
+                        bayiden adrese sigortalı nakliye imkanı sunuyoruz. Her araç tipi farklı ekipman ve
+                        deneyim gerektirdiği için filomuzu bu çeşitliliğe göre donattık.</p>
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Otoyolda Araç Arızalandığında Ne Yapmalısınız?</h3>
+                    <p>Aracınız E-5, TEM veya Kuzey Marmara Otoyolu gibi bir güzergâhta arızalanırsa, önce
+                        aracı mümkünse banketin en sağına, trafik akışından uzağa çekin ve dörtlü flaşörleri
+                        yakın. Reflektörünüzü aracın en az 30 metre gerisine yerleştirin, siz ve yolcularınız
+                        bariyerin dışına, güvenli bir noktaya geçin. Aracın içinde veya yakınında beklemeyin.
+                        Ardından bizi arayarak bulunduğunuz kilometre işaretini veya en yakın gişe/tesis
+                        bilgisini paylaşın; otoyol koşullarına uygun donanımlı ekibimiz size yönlendirilir.</p>
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Sakarya'da Hizmet Verdiğimiz Bölgeler</h3>
+                    <p>Sakarya'nın Adapazarı, Serdivan, Erenler, Hendek, Akyazı, Karasu, Sapanca, Arifiye,
+                        Ferizli, Geyve, Karapürçek, Kaynarca, Kocaali, Pamukova, Söğütlü ve Taraklı olmak üzere
+                        tüm 16 ilçesinde; ayrıca Kocaeli (İzmit dahil) ve Düzce genelinde 7/24 hizmet
+                        veriyoruz. Bölgenizi yukarıdaki bölgeler bölümünden veya
+                        <a href="<?= BASE_URL ?>bolgeler">tüm bölgeler sayfamızdan</a> bulabilirsiniz.</p>
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Yol Yardım mı, Çekici mi?</h3>
+                    <p>İkisi arasındaki fark, müdahalenin yerinde yapılıp yapılamamasıdır. Akü takviyesi,
+                        lastik değişimi, yakıt ikmali gibi basit sorunları ekibimiz olduğunuz yerde çözer; bu
+                        yol yardımdır. Aracınız sürüşe uygun değilse (ağır hasar, çalışmayan motor, ciddi
+                        arıza) aracı bir servise veya istediğiniz adrese güvenli şekilde taşırız; bu da çekici
+                        hizmetidir. Hangisine ihtiyacınız olduğuna karar veremiyorsanız bizi arayın, telefonda
+                        durumunuzu değerlendirip doğru ekibi yönlendiririz.</p>
+
+                    <h3 class="h5 fw-bold mt-4 mb-2">Konum Gönderme Süreci Nasıl İşliyor?</h3>
+                    <p>Bizi aradığınızda veya WhatsApp'tan yazdığınızda, konumunuzu paylaşmanız yeterlidir
+                        (WhatsApp'ın "konum gönder" özelliğini kullanabilir, ya da bulunduğunuz cadde/kilometre
+                        bilgisini sözlü iletebilirsiniz). Konumunuza en yakın ekibimiz belirlenir ve size doğru
+                        yönlendirilir; ortalama 15-20 dakika içinde yanınızda oluruz. Süreç boyunca ekibimizle
+                        telefonda irtibatta kalabilirsiniz.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- FAQ Accordion (Modern) -->
 <section class="py-5" style="background-color: #f9f9f9;">
     <div class="container py-4">
@@ -298,11 +358,73 @@
                         </div>
                     </div>
 
+                    <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <i class="fas fa-question-circle text-warning me-3"></i>Yol yardım ile çekici hizmeti
+                                arasındaki fark nedir?
+                            </button>
+                        </h3>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted ps-5">
+                                Yol yardım, aracınızı çekmeden olduğu yerde müdahale etmektir (akü takviyesi, lastik
+                                değişimi, yakıt ikmali gibi). Çekici hizmeti ise aracın yerinde onarılamadığı,
+                                sürüşe uygun olmadığı durumlarda aracı güvenli şekilde bir servise veya adrese
+                                taşımaktır. Ekibimiz önce yerinde müdahaleyi dener, gerekirse çekici hizmetine geçer.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<?php
+$faqSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => [
+        [
+            '@type' => 'Question',
+            'name' => 'Çekici bekleme süresi ne kadar?',
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => 'Konumunuza bağlı olarak ortalama varış süremiz 15 ile 30 dakika arasındadır. Trafik durumuna göre operatörümüz size net süre verecektir.',
+            ],
+        ],
+        [
+            '@type' => 'Question',
+            'name' => 'Araçlarım sigortalı mı taşınıyor?',
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => 'Evet, taşıdığımız tüm araçlar "Taşıyıcı Sorumluluk Sigortası" kapsamında tam güvence altındadır. Olası hasarlara karşı aracınız sigortalanır.',
+            ],
+        ],
+        [
+            '@type' => 'Question',
+            'name' => 'Fiyatlarınız neye göre belirleniyor?',
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => 'Fiyatlandırma; aracın türü, durumu (kazalı/arızalı), gideceği mesafe ve kullanılacak ekipmana göre değişiklik gösterir. Telefonda net fiyat alabilirsiniz.',
+            ],
+        ],
+        [
+            '@type' => 'Question',
+            'name' => 'Yol yardım ile çekici hizmeti arasındaki fark nedir?',
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => 'Yol yardım, aracınızı çekmeden olduğu yerde müdahale etmektir (akü takviyesi, lastik değişimi, yakıt ikmali gibi). Çekici hizmeti ise aracın yerinde onarılamadığı durumlarda aracı güvenli şekilde bir servise veya adrese taşımaktır.',
+            ],
+        ],
+    ],
+];
+?>
+<script type="application/ld+json">
+<?= json_encode($faqSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
+</script>
 
 <style>
     .custom-accordion .accordion-button:not(.collapsed) {
