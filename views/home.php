@@ -69,8 +69,8 @@
                     <div class="position-absolute bottom-0 start-0 bg-warning p-4 rounded-end-4 shadow"
                         style="margin-bottom: -20px;">
                         <span
-                            class="display-4 fw-bold text-dark d-block"><?= htmlspecialchars($settings['about_exp_years'] ?? '15') ?></span>
-                        <span class="h6 text-uppercase fw-bold text-dark m-0">Yıllık Tecrübe</span>
+                            class="display-4 fw-bold text-dark d-block"><?= htmlspecialchars($settings['stat_team'] ?? '3') ?></span>
+                        <span class="h6 text-uppercase fw-bold text-dark m-0">Kişilik Uzman Ekip</span>
                     </div>
                 </div>
             </div>
@@ -464,10 +464,10 @@ $faqSchema = [
                 <p class="text-uppercase tracking-widest text-light mt-2 small">7/24 Aktif Hizmet</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
-                <div class="display-4 fw-bold text-warning mb-0 counter">
-                    <?= htmlspecialchars($settings['stat_years'] ?? '0') ?>
+                <div class="mb-0">
+                    <i class="fas fa-map-marked-alt fa-2x text-warning"></i>
                 </div>
-                <p class="text-uppercase tracking-widest text-light mt-2 small">Yıllık Tecrübe</p>
+                <p class="text-uppercase tracking-widest text-light mt-2 small">Bölgeye Hakim Ekip</p>
             </div>
             <div class="col-6 col-md-3 border-start border-secondary">
                 <div class="display-4 fw-bold text-warning mb-0 counter">

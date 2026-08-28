@@ -2,7 +2,7 @@
 
 <!-- Location Hero -->
 <header class="position-relative overflow-hidden"
-    style="height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+    style="height: 60vh; min-height: 500px; padding-top: 90px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
     <div class="position-absolute w-100 h-100 page-hero-bg"></div>
     <div class="container position-relative z-2">
         <span class="badge bg-warning text-dark fw-bold mb-3 px-3 py-2 animate-pulse"><i

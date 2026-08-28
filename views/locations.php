@@ -2,7 +2,7 @@
 
 <!-- Hero Section -->
 <header class="page-hero-bg text-white text-center py-5 d-flex align-items-center justify-content-center"
-    style="min-height: 40vh;">
+    style="min-height: 40vh; padding-top: 90px;">
     <div class="container">
         <h1 class="display-3 fw-bold mb-3 animate-shine text-uppercase">Hizmet Bölgelerimiz</h1>
         <p class="lead mb-4 opacity-75">Sakarya, Kocaeli ve Düzce'nin her noktasına 7/24 hizmet veriyoruz.</p>
