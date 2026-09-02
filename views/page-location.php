@@ -26,6 +26,11 @@
     </div>
 </header>
 
+<?php renderBreadcrumb([
+    ['label' => 'Hizmet Bölgeleri', 'url' => BASE_URL . 'bolgeler'],
+    ['label' => $location['name']],
+]); ?>
+
 <div class="container py-5 my-5">
     <div class="row g-5">
         <!-- Main Content -->

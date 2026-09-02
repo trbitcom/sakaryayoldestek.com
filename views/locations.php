@@ -18,27 +18,52 @@
     </div>
 </header>
 
+<?php renderBreadcrumb([
+    ['label' => 'Hizmet Bölgeleri'],
+]); ?>
+
 <section class="py-5 bg-white">
     <div class="container">
-        <div class="row g-3" id="locationsGrid">
-            <?php
-            // Tüm aktif bölgeleri çek
-            $stmt = $pdo->query("SELECT name, slug FROM locations WHERE is_active = 1 ORDER BY name ASC");
-            while ($row = $stmt->fetch()):
-                ?>
-                <div class="col-6 col-md-4 col-lg-3 location-item">
-                    <a href="<?= BASE_URL . $row['slug'] ?>"
-                        class="card h-100 text-decoration-none border shadow-sm hover-up text-center p-3">
-                        <div class="card-body p-2">
-                            <i class="fas fa-map-marker-alt text-danger fa-2x mb-3"></i>
-                            <h2 class="h5 card-title text-dark fw-bold m-0">
-                                <?= htmlspecialchars($row['name']) ?>
-                            </h2>
+        <?php
+        // İl bazlı gruplama (Hick's Law: 21 seçeneği tek listede göstermek yerine grupla)
+        $provinceGroups = [
+            'Sakarya' => ['adapazari-oto-cekici', 'akyazi', 'arifiye', 'erenler', 'ferizli', 'geyve', 'hendek', 'karapurcek', 'karasu', 'kaynarca', 'kocaali', 'pamukova', 'sapanca', 'serdivan-oto-cekici', 'sogutlu', 'tarakli'],
+            'Kocaeli' => ['izmit', 'akmese', 'sevindikli'],
+            'Otoyol Güzergahları' => ['kuzey-marmara-otoyolu', 'sapanca-anadolu-otoyolu'],
+        ];
+
+        $stmt = $pdo->query("SELECT name, slug FROM locations WHERE is_active = 1");
+        $bySlug = [];
+        foreach ($stmt->fetchAll() as $row) {
+            $bySlug[$row['slug']] = $row;
+        }
+
+        foreach ($provinceGroups as $groupName => $slugs):
+            $groupSlugs = array_values(array_filter($slugs, fn($s) => isset($bySlug[$s])));
+            if (empty($groupSlugs)) continue;
+            usort($groupSlugs, fn($a, $b) => strcmp($bySlug[$a]['name'], $bySlug[$b]['name']));
+            ?>
+            <div class="location-group mb-5" data-group>
+                <h2 class="h4 fw-bold mb-3 pb-2 border-bottom border-3 border-warning d-inline-block">
+                    <i class="fas fa-map-marked-alt text-warning me-2"></i><?= htmlspecialchars($groupName) ?>
+                </h2>
+                <div class="row g-3">
+                    <?php foreach ($groupSlugs as $slug): $row = $bySlug[$slug]; ?>
+                        <div class="col-6 col-md-4 col-lg-3 location-item">
+                            <a href="<?= BASE_URL . $row['slug'] ?>"
+                                class="card h-100 text-decoration-none border shadow-sm hover-up text-center p-3">
+                                <div class="card-body p-2">
+                                    <i class="fas fa-map-marker-alt text-danger fa-2x mb-3"></i>
+                                    <h3 class="h5 card-title text-dark fw-bold m-0">
+                                        <?= htmlspecialchars($row['name']) ?>
+                                    </h3>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    <?php endforeach; ?>
                 </div>
-            <?php endwhile; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
 
         <!-- No Results Message -->
         <div id="noResults" class="text-center py-5 d-none" role="status" aria-live="polite">
@@ -76,17 +101,21 @@
 <script>
     document.getElementById('locationSearch').addEventListener('keyup', function () {
         let filter = this.value.toLowerCase();
-        let items = document.querySelectorAll('.location-item');
         let hasVisible = false;
 
-        items.forEach(function (item) {
-            let text = item.textContent.toLowerCase();
-            if (text.includes(filter)) {
-                item.classList.remove('d-none');
-                hasVisible = true;
-            } else {
-                item.classList.add('d-none');
-            }
+        document.querySelectorAll('[data-group]').forEach(function (group) {
+            let groupHasVisible = false;
+            group.querySelectorAll('.location-item').forEach(function (item) {
+                let text = item.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    item.classList.remove('d-none');
+                    groupHasVisible = true;
+                    hasVisible = true;
+                } else {
+                    item.classList.add('d-none');
+                }
+            });
+            group.classList.toggle('d-none', !groupHasVisible);
         });
 
         if (!hasVisible) {

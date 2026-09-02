@@ -12,6 +12,10 @@
     </div>
 </div>
 
+<?php renderBreadcrumb([
+    ['label' => $page['title']],
+]); ?>
+
 <!-- Content -->
 <main class="py-5 bg-light" style="min-height: 60vh;">
     <div class="container py-4">
