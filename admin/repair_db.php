@@ -42,6 +42,21 @@ try {
         echo "pages.meta_desc sütunu eklendi.<br>";
     }
 
+    // contact_messages tablosu var mı
+    try {
+        $pdo->query("SELECT id FROM contact_messages LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("CREATE TABLE contact_messages (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(150) NOT NULL,
+            phone VARCHAR(50) NOT NULL,
+            message TEXT DEFAULT NULL,
+            is_read TINYINT(1) NOT NULL DEFAULT 0,
+            created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )");
+        echo "contact_messages tablosu oluşturuldu.<br>";
+    }
+
     echo "<b>Veritabanı onarımı tamamlandı!</b> Bu dosyayı silebilirsiniz.";
 
 } catch (PDOException $e) {

@@ -18,6 +18,7 @@ $navItems = [
   ['href' => 'locations.php', 'icon' => 'fa-map-marker-alt', 'label' => 'Bölgeler', 'match' => ['locations.php', 'location-add.php']],
   ['href' => 'services.php', 'icon' => 'fa-concierge-bell', 'label' => 'Hizmetler', 'match' => ['services.php', 'service-add.php']],
   ['href' => 'references.php', 'icon' => 'fa-handshake', 'label' => 'Referanslar', 'match' => ['references.php']],
+  ['href' => 'messages.php', 'icon' => 'fa-envelope', 'label' => 'Mesajlar', 'match' => ['messages.php']],
   ['href' => 'pages.php', 'icon' => 'fa-file-alt', 'label' => 'Sayfalar', 'match' => ['pages.php', 'page_edit.php']],
   ['href' => 'settings.php', 'icon' => 'fa-cog', 'label' => 'Ayarlar', 'match' => ['settings.php']],
 ];
@@ -51,10 +52,20 @@ $navItems = [
         <span>Sakarya Yol Destek</span>
       </div>
 
+      <?php
+      try {
+          $unreadCount = $pdo->query("SELECT COUNT(*) FROM contact_messages WHERE is_read = 0")->fetchColumn();
+      } catch (PDOException $e) {
+          $unreadCount = 0;
+      }
+      ?>
       <nav class="sidebar-nav">
         <?php foreach ($navItems as $item): ?>
           <a class="sidebar-link<?= in_array($currentPage, $item['match']) ? ' active' : '' ?>" href="<?= $item['href'] ?>">
             <i class="fas <?= $item['icon'] ?>"></i> <span><?= $item['label'] ?></span>
+            <?php if ($item['href'] === 'messages.php' && $unreadCount > 0): ?>
+              <span class="badge bg-danger rounded-pill ms-auto"><?= $unreadCount ?></span>
+            <?php endif; ?>
           </a>
         <?php endforeach; ?>
 

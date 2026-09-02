@@ -1,4 +1,28 @@
-<?php require_once 'header.php'; ?>
+<?php
+$formSuccess = false;
+$formError = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form'])) {
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if ($name === '' || $phone === '') {
+        $formError = 'Lütfen isim ve telefon alanlarını doldurun.';
+    } else {
+        $stmt = $pdo->prepare("INSERT INTO contact_messages (name, phone, message) VALUES (:name, :phone, :message)");
+        $stmt->execute(['name' => $name, 'phone' => $phone, 'message' => $message]);
+        header("Location: " . BASE_URL . "iletisim?gonderildi=1");
+        exit;
+    }
+}
+
+if (isset($_GET['gonderildi'])) {
+    $formSuccess = true;
+}
+
+require_once 'header.php';
+?>
 
 <main>
 <!-- Mini Header -->
@@ -68,14 +92,53 @@
             </div>
         </div>
 
-        <!-- Map -->
-        <?php if (!empty($settings['google_maps'])): ?>
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
-                <div class="ratio ratio-21x9" style="max-height: 450px;">
-                    <?= $settings['google_maps'] ?>
+        <!-- Form + Map -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-5">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                    <h2 class="h5 fw-bold mb-3">Aramak İstemiyorsanız Yazın</h2>
+                    <p class="text-muted small mb-4">Bilgilerinizi bırakın, ekibimiz en kısa sürede size dönsün.</p>
+
+                    <?php if ($formSuccess): ?>
+                        <div class="alert alert-success" role="status">
+                            <i class="fas fa-check-circle me-2"></i>Mesajınız alındı, en kısa sürede size dönüş yapacağız.
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($formError): ?>
+                        <div class="alert alert-danger" role="alert"><?= htmlspecialchars($formError) ?></div>
+                    <?php endif; ?>
+
+                    <form method="POST" action="<?= BASE_URL ?>iletisim">
+                        <input type="hidden" name="contact_form" value="1">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label fw-bold small">Adınız Soyadınız</label>
+                            <input type="text" id="contactName" name="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label fw-bold small">Telefon Numaranız</label>
+                            <input type="tel" id="contactPhone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label fw-bold small">Konumunuz / Mesajınız
+                                (opsiyonel)</label>
+                            <textarea id="contactMessage" name="message" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning fw-bold w-100 rounded-pill">
+                            <i class="fas fa-paper-plane me-2"></i>Gönder
+                        </button>
+                    </form>
                 </div>
             </div>
-        <?php endif; ?>
+            <div class="col-lg-7">
+                <?php if (!empty($settings['google_maps'])): ?>
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+                        <div class="ratio ratio-21x9 h-100" style="min-height: 300px;">
+                            <?= $settings['google_maps'] ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
 
         <!-- CTA -->
         <div class="card bg-dark text-white border-0 shadow rounded-4 overflow-hidden">
