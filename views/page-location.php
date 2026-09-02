@@ -1,5 +1,6 @@
 <?php require_once 'header.php'; ?>
 
+<main>
 <!-- Location Hero -->
 <header class="position-relative overflow-hidden"
     style="height: 60vh; min-height: 500px; padding-top: 90px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
@@ -70,7 +71,7 @@
                     <div class="card-body p-4">
                         <i class="fas fa-headset fa-3x text-warning mb-3"></i>
                         <h3 class="h4 fw-bold">Acil Yardım Hattı</h3>
-                        <p class="text-white-50">Müşteri temsilcimiz çağrınızı bekliyor.</p>
+                        <p class="text-white-75">Müşteri temsilcimiz çağrınızı bekliyor.</p>
                         <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
                             class="btn btn-warning w-100 py-3 fw-bold rounded-pill text-dark fs-5 animate-pulse">
                             <i class="fas fa-phone me-2"></i>
@@ -118,5 +119,6 @@
         </a>
     </div>
 </section>
+</main>
 
 <?php require_once 'footer.php'; ?>

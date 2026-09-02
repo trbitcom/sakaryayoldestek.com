@@ -14,10 +14,11 @@ if (!$page) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = trim($_POST['title']);
+    $meta_desc = trim($_POST['meta_desc'] ?? '');
     $content = trim($_POST['content']);
 
-    $stmt = $pdo->prepare("UPDATE pages SET title = ?, content = ? WHERE id = ?");
-    $stmt->execute([$title, $content, $id]);
+    $stmt = $pdo->prepare("UPDATE pages SET title = ?, meta_desc = ?, content = ? WHERE id = ?");
+    $stmt->execute([$title, $meta_desc, $content, $id]);
 
     header("Location: pages.php?success=updated");
     exit;
@@ -38,6 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label class="form-label fw-bold">Sayfa Başlığı</label>
                 <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($page['title']) ?>"
                     required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Meta Açıklama (Google'da çıkacak kısa açıklama)</label>
+                <textarea name="meta_desc" class="form-control" rows="2"><?= htmlspecialchars($page['meta_desc'] ?? '') ?></textarea>
             </div>
 
             <div class="mb-3">

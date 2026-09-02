@@ -74,6 +74,11 @@
     <link rel="icon" type="image/x-icon" href="<?= BASE_URL ?>public/img/<?= htmlspecialchars($settings['favicon']) ?>">
   <?php endif; ?>
 
+  <?php if (empty($url[0])): ?>
+    <!-- Ana sayfa hero poster'ı erken yükle (LCP) -->
+    <link rel="preload" as="image" href="<?= BASE_URL ?>public/img/hero-poster.jpg" fetchpriority="high">
+  <?php endif; ?>
+
   <!-- Dış kaynaklara erken bağlantı (performans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,7 +226,7 @@
           <li class="nav-item"><a class="nav-link px-3" href="<?= BASE_URL ?>">Anasayfa</a></li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Hizmetlerimiz</a>
+            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hizmetlerimiz</a>
             <ul class="dropdown-menu shadow border-0">
               <?php
               $stmtHdrSvc = $pdo->query("SELECT name, slug, icon FROM services WHERE is_active = 1 ORDER BY sort_order ASC");
@@ -235,7 +240,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Hizmet
+            <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hizmet
               Bölgeleri</a>
             <ul class="dropdown-menu shadow border-0">
               <?php

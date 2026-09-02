@@ -10,6 +10,13 @@
     --whatsapp-green: #25D366;
 }
 
+/* Koyu zeminlerde okunabilir "soluk beyaz" metin (text-white-50'nin
+   yerine — %50 opaklık koyu arka planlarda WCAG AA kontrastını
+   (4.5:1) sağlamıyordu) */
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
 /* Preloader */
 #preloader {
     position: fixed;

@@ -75,6 +75,7 @@ $page = $stmtPage->fetch();
 
 if ($page) {
     $metaTitle = $page['title'] . " - " . (defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici');
+    $metaDesc = $page['meta_desc'] ?? '';
 
     require_once 'views/header.php';
     require_once 'views/page.php';
@@ -84,6 +85,7 @@ if ($page) {
 
 // 3. Durum: Sayfa Bulunamadı
 header("HTTP/1.0 404 Not Found");
-echo "404 - Sayfa Bulunamadı";
-// İstersen buraya views/404.php de ekleyebiliriz.
+$metaTitle = "Sayfa Bulunamadı - " . (defined('SITE_NAME') ? SITE_NAME : 'Oto Çekici');
+$metaDesc = "Aradığınız sayfa bulunamadı.";
+require_once 'views/404.php';
 ?>

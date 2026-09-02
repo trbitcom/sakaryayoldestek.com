@@ -1,5 +1,6 @@
 <?php require_once 'header.php'; ?>
 
+<main>
 <!-- Hero Section -->
 <header class="page-hero-bg text-white text-center py-5 d-flex align-items-center justify-content-center"
     style="min-height: 40vh; padding-top: 90px;">
@@ -8,9 +9,10 @@
         <p class="lead mb-4 opacity-75">Sakarya, Kocaeli ve Düzce'nin her noktasına 7/24 hizmet veriyoruz.</p>
         <div class="row justify-content-center">
             <div class="col-md-6">
+                <label for="locationSearch" class="visually-hidden">Bölge veya ilçe ara</label>
                 <input type="text" id="locationSearch"
                     class="form-control form-control-lg rounded-pill shadow-lg border-0 px-4"
-                    placeholder="Bölge veya İlçe Ara...">
+                    placeholder="Bölge veya İlçe Ara..." aria-label="Bölge veya ilçe ara">
             </div>
         </div>
     </div>
@@ -39,7 +41,7 @@
         </div>
 
         <!-- No Results Message -->
-        <div id="noResults" class="text-center py-5 d-none">
+        <div id="noResults" class="text-center py-5 d-none" role="status" aria-live="polite">
             <i class="fas fa-search-location fa-3x text-muted mb-3"></i>
             <h2 class="h4 text-muted">Aradığınız bölge bulunamadı.</h2>
             <p>Yine de bizi arayabilirsiniz, belki oraya da geliyoruz!</p>
@@ -69,6 +71,7 @@
         </div>
     </div>
 </section>
+</main>
 
 <script>
     document.getElementById('locationSearch').addEventListener('keyup', function () {

@@ -1,5 +1,6 @@
 <?php require_once 'header.php'; ?>
 
+<main>
 <!-- Mini Header -->
 <div class="position-relative bg-secondary text-white overflow-hidden"
     style="min-height: 300px; padding-top: 120px; padding-bottom: 3rem;">
@@ -10,9 +11,9 @@
 
     <div class="container position-relative h-100 d-flex flex-column justify-content-center" style="z-index: 2;">
         <h1 class="display-4 fw-bold mb-0 text-warning text-center">İletişim</h1>
-        <p class="text-center text-white-50 mb-0 mt-2">7/24 ulaşabilirsiniz, size en yakın ekibimizi yönlendirelim.</p>
+        <p class="text-center text-white-75 mb-0 mt-2">7/24 ulaşabilirsiniz, size en yakın ekibimizi yönlendirelim.</p>
         <?php if (!empty($settings['owner_name'])): ?>
-            <p class="text-center text-white-50 mb-0 mt-1 small">İşletme Sahibi: <span
+            <p class="text-center text-white-75 mb-0 mt-1 small">İşletme Sahibi: <span
                     class="text-white fw-bold"><?= htmlspecialchars($settings['owner_name']) ?></span></p>
         <?php endif; ?>
     </div>
@@ -81,7 +82,7 @@
             <div class="card-body p-5 text-center">
                 <i class="fas fa-headset fa-3x text-warning mb-3"></i>
                 <h3 class="fw-bold mb-3">Yolda mı kaldınız?</h3>
-                <p class="text-white-50 mb-4">Sakarya, Kocaeli ve Düzce genelinde 7/24 hizmetinizdeyiz. Hemen arayın
+                <p class="text-white-75 mb-4">Sakarya, Kocaeli ve Düzce genelinde 7/24 hizmetinizdeyiz. Hemen arayın
                     veya WhatsApp'tan konumunuzu gönderin.</p>
                 <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
                     <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"
@@ -97,5 +98,6 @@
         </div>
     </div>
 </section>
+</main>
 
 <?php require_once 'footer.php'; ?>

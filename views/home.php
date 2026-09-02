@@ -1,7 +1,8 @@
+<main>
 <!-- Hero Section -->
 <header class="hero-section position-relative overflow-hidden" style="height: 100vh;">
-    <video autoplay muted loop playsinline class="position-absolute w-100 h-100 object-fit-cover"
-        style="top: 0; left: 0; z-index: 0;">
+    <video autoplay muted loop playsinline preload="none" poster="<?= BASE_URL ?>public/img/hero-poster.jpg"
+        class="position-absolute w-100 h-100 object-fit-cover" style="top: 0; left: 0; z-index: 0;">
         <source src="<?= BASE_URL ?>public/img/hero-video.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay position-absolute w-100 h-100" style="background: rgba(0,0,0,0.7); z-index: 1;"></div>
@@ -316,7 +317,7 @@
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#faq1">
+                                data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
                                 <i class="fas fa-clock text-warning me-3"></i>Çekici bekleme süresi ne kadar?
                             </button>
                         </h3>
@@ -331,7 +332,7 @@
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#faq2">
+                                data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
                                 <i class="fas fa-shield-alt text-warning me-3"></i>Araçlarım sigortalı mı taşınıyor?
                             </button>
                         </h3>
@@ -346,7 +347,7 @@
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#faq3">
+                                data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
                                 <i class="fas fa-lira-sign text-warning me-3"></i>Fiyatlarınız neye göre belirleniyor?
                             </button>
                         </h3>
@@ -361,7 +362,7 @@
                     <div class="accordion-item border-0 mb-3 shadow-sm bg-white rounded overflow-hidden">
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed fw-bold py-3 fs-5" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#faq4">
+                                data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
                                 <i class="fas fa-question-circle text-warning me-3"></i>Yol yardım ile çekici hizmeti
                                 arasındaki fark nedir?
                             </button>
@@ -503,3 +504,4 @@ $faqSchema = [
         </div>
     </section>
 <?php endif; ?>
+</main>

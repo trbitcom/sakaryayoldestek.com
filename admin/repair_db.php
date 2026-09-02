@@ -34,6 +34,14 @@ try {
         }
     }
 
+    // pages tablosunda meta_desc sütunu var mı
+    try {
+        $pdo->query("SELECT meta_desc FROM pages LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("ALTER TABLE pages ADD COLUMN meta_desc VARCHAR(255) DEFAULT NULL");
+        echo "pages.meta_desc sütunu eklendi.<br>";
+    }
+
     echo "<b>Veritabanı onarımı tamamlandı!</b> Bu dosyayı silebilirsiniz.";
 
 } catch (PDOException $e) {
