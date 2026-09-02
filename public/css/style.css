@@ -204,6 +204,25 @@ h6,
     color: white;
 }
 
+/* Section başlığı altı dekoratif ayırıcı çizgi */
+.width-50 {
+    width: 50px;
+}
+
+.height-4 {
+    height: 4px;
+}
+
+/* Geniş harf aralığı (küçük büyük harf etiketler için) */
+.tracking-widest {
+    letter-spacing: 0.15em;
+}
+
+/* Footer linklerinde hover'da tam opaklık */
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+}
+
 /* Region Links */
 .region-link {
     background: white;
