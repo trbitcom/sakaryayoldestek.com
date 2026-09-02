@@ -3,14 +3,14 @@
 <main>
 <!-- Location Hero -->
 <header class="position-relative overflow-hidden"
-    style="height: 60vh; min-height: 500px; padding-top: 90px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+    style="min-height: 500px; padding-top: 90px; padding-bottom: 40px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
     <div class="position-absolute w-100 h-100 page-hero-bg"></div>
-    <div class="container position-relative z-2">
+    <div class="container position-relative z-2 w-100">
         <span class="badge bg-warning text-dark fw-bold mb-3 px-3 py-2 animate-pulse"><i
                 class="fas fa-map-marker-alt me-2"></i>7/24 HİZMET</span>
-        <h1 class="display-3 fw-bold mb-3 text-uppercase"><?= htmlspecialchars($location['name']) ?><br><span
+        <h1 class="display-3 fw-bold mb-3 text-uppercase" style="overflow-wrap: break-word;"><?= htmlspecialchars($location['name']) ?><br><span
                 class="text-warning">OTO ÇEKİCİ</span></h1>
-        <p class="lead mb-4 fs-3">Yolda kalmayın! <?= htmlspecialchars($location['name']) ?> ve çevresinde en yakın
+        <p class="lead mb-4 fs-3" style="overflow-wrap: break-word;">Yolda kalmayın! <?= htmlspecialchars($location['name']) ?> ve çevresinde en yakın
             ekibimiz 15 dakikada yanınızda.</p>
 
         <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">

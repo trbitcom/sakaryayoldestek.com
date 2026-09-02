@@ -148,7 +148,7 @@
       position: relative;
     }
 
-    .nav-link::after {
+    .nav-link:not(.dropdown-toggle)::after {
       content: '';
       position: absolute;
       width: 0;
@@ -159,7 +159,7 @@
       transition: width 0.3s;
     }
 
-    .nav-link:hover::after {
+    .nav-link:not(.dropdown-toggle):hover::after {
       width: 100%;
     }
 

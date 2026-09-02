@@ -3,14 +3,14 @@
 <main>
 <!-- Service Hero -->
 <header class="position-relative overflow-hidden"
-    style="height: 50vh; min-height: 420px; padding-top: 90px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+    style="min-height: 420px; padding-top: 90px; padding-bottom: 40px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
     <div class="position-absolute w-100 h-100 page-hero-bg"></div>
-    <div class="container position-relative z-2">
+    <div class="container position-relative z-2 w-100">
         <div class="mb-3">
             <i class="fas <?= htmlspecialchars($service['icon'] ?: 'fa-truck-pickup') ?> fa-3x text-warning"></i>
         </div>
-        <h1 class="display-4 fw-bold mb-3 text-uppercase"><?= htmlspecialchars($service['name']) ?></h1>
-        <p class="lead mb-4 fs-4">Sakarya, Kocaeli ve Düzce genelinde 7/24 hizmetinizdeyiz.</p>
+        <h1 class="display-4 fw-bold mb-3 text-uppercase" style="overflow-wrap: break-word;"><?= htmlspecialchars($service['name']) ?></h1>
+        <p class="lead mb-4 fs-4" style="overflow-wrap: break-word;">Sakarya, Kocaeli ve Düzce genelinde 7/24 hizmetinizdeyiz.</p>
 
         <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
             <a href="tel:<?= isset($settings['phone']) ? $settings['phone'] : '05551234567' ?>"

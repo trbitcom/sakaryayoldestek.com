@@ -9,10 +9,10 @@
 
     <div class="container hero-content text-center position-relative h-100 d-flex flex-column justify-content-center align-items-center"
         style="z-index: 2;">
-        <h1 class="display-1 fw-bold mb-4 text-white"
-            style="font-family: 'Rajdhani', sans-serif; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">SAKARYA OTO
+        <h1 class="display-1 fw-bold mb-4 text-white w-100"
+            style="font-family: 'Rajdhani', sans-serif; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); overflow-wrap: break-word;">SAKARYA OTO
             ÇEKİCİ<br><span class="text-warning">7/24 YOL YARDIM</span></h1>
-        <p class="lead mb-5 text-white fs-3 d-none d-md-block">Sakarya, Kocaeli ve Düzce'de 7/24 Oto Çekici, Yol Yardım ve Oto Kurtarıcı Hizmeti</p>
+        <p class="lead mb-5 text-white fs-3 d-none d-md-block w-100">Sakarya, Kocaeli ve Düzce'de 7/24 Oto Çekici, Yol Yardım ve Oto Kurtarıcı Hizmeti</p>
 
         <div class="d-flex flex-column flex-md-row gap-3 w-100 justify-content-center px-4">
             <a href="https://wa.me/<?= isset($settings['whatsapp']) ? $settings['whatsapp'] : '905551234567' ?>"

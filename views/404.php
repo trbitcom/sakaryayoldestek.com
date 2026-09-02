@@ -9,8 +9,8 @@
     style="min-height: 70vh; padding-top: 40px;">
     <i class="fas fa-map-signs fa-4x text-warning mb-4"></i>
     <h1 class="display-4 fw-bold mb-3">404</h1>
-    <h2 class="h4 text-muted mb-4">Aradığınız sayfa bulunamadı.</h2>
-    <p class="text-muted mb-4" style="max-width: 500px;">Bu sayfa kaldırılmış, adı değişmiş ya da hiç var olmamış
+    <h2 class="h4 text-muted mb-4 w-100" style="overflow-wrap: break-word;">Aradığınız sayfa bulunamadı.</h2>
+    <p class="text-muted mb-4 w-100" style="max-width: 500px; overflow-wrap: break-word;">Bu sayfa kaldırılmış, adı değişmiş ya da hiç var olmamış
         olabilir. Yolda kaldıysanız aşağıdan hemen bize ulaşabilirsiniz.</p>
 
     <div class="d-flex flex-column flex-md-row gap-3">
