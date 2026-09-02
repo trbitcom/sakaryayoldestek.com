@@ -121,8 +121,13 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Mobilde aşağı kaydırınca navbar'ı gizle, yukarı kaydırınca göster */
+    /* Mobilde: navbar her zaman koyu (okunabilir menü için), aşağı
+       kaydırınca gizlenir, yukarı kaydırınca geri gelir */
     @media (max-width: 991.98px) {
+      .navbar {
+        background: #002550 !important;
+      }
+
       .navbar.nav-hidden {
         transform: translateY(-100%);
       }
@@ -181,12 +186,6 @@
 
       100% {
         box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
-      }
-    }
-
-    @media (max-width: 991px) {
-      .navbar {
-        background: #002550 !important;
       }
     }
   </style>
